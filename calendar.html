@@ -30,3 +30,20 @@
         </tbody>
     </table>
 </script>
+
+
+<script type="text/javascript">
+
+// Get this month's calendar as an Object.
+var calendarData = JsonCalendar.calendar();
+
+// Get the calendar template.
+var source = $("#calendarTemplate").html();
+
+// Compile the template with your mustache-type lib.
+var template = Handlebars.compile(source);
+
+// Append the template to DOM.
+$("#calendar").html(template(calendarData));
+
+</script>
