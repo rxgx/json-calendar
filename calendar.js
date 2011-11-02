@@ -1,11 +1,14 @@
 
 var JsonCalendar = (function() {
 
-    var MONTHNAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    var defaults,
+    var DAYNAMES,
+        MONTHNAMES,
+        defaults,
         nbsp = "&nbsp;",
         now = new Date;
+
+    DAYNAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    MONTHNAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     defaults = {
         year            : now.getFullYear(),
@@ -54,7 +57,6 @@ var JsonCalendar = (function() {
                 data = {},
                 date = {},
                 day,
-                dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 firstDate,
                 firstDayOfWeek,
                 i = 1,
