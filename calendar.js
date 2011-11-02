@@ -7,6 +7,7 @@ var JsonCalendar = (function() {
         nbsp = "&nbsp;",
         now = new Date;
 
+    // TODO: Replace these lines with a string split of Date#toLocaleDateString?
     DAYNAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     MONTHNAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -57,6 +58,7 @@ var JsonCalendar = (function() {
                 data = {},
                 date = {},
                 day,
+                dayNames = DAYNAMES,
                 firstDate,
                 firstDayOfWeek,
                 i = 1,
@@ -128,7 +130,7 @@ var JsonCalendar = (function() {
                         classNames.push("month-day");
                         date = new Date(firstDate.getFullYear(), firstDate.getMonth(), i);
                         i += 1;
-                        if (date.toDateString() === now.toDateString() && options['show_today']) {
+                        if (options.showToday && date.toDateString() === now.toDateString()) {
                             classNames.push("today");
                         }
                     }
