@@ -1,0 +1,25 @@
+{
+  "name": "json-calendar",
+  "version": "1.0.0",
+  "description": "A data model for working with dates and date ranges on a calendar.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony_arrow_functions index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rxgx/json-calendar.git"
+  },
+  "keywords": [
+    "json",
+    "calendar",
+    "date"
+  ],
+  "author": "Ryan Gasparini <ryan@rxgx.com> (http://www.rxgx.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rxgx/json-calendar/issues"
+  },
+  "homepage": "https://github.com/rxgx/json-calendar"
+}
