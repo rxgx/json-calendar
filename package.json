@@ -4,7 +4,7 @@
   "description": "A data model for working with dates and date ranges on a calendar.",
   "main": "index.js",
   "scripts": {
-    "start": "node --harmony_arrow_functions index.js",
+    "start": "node --harmony_arrow_functions --harmony_modules index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
