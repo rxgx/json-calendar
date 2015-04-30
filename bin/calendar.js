@@ -151,9 +151,9 @@ function Calendar(options) {
         this.weeks.push(week);
     }
 
-    data.nextMonth = this.getRelativeMonth(firstDate, 1);
+    data.nextMonth     = this.getRelativeMonth(firstDate, 1);
     data.previousMonth = this.getRelativeMonth(firstDate, -1);
-    data.currentMonth = this.getMonthName(firstDate.getMonth());
+    data.currentMonth  = this.getMonthName(firstDate.getMonth());
 }
 
 Calendar.prototype = {
@@ -175,13 +175,9 @@ Calendar.prototype = {
         }
     },
 
-    getDayName: (index) => {
-        return DAYNAMES[index];
-    },
+    getDayName: (index) => DAYNAMES[index],
     
-    getMonthName: (index) => {
-        return MONTHNAMES[index];
-    },
+    getMonthName: (index) => MONTHNAMES[index],
     
     getRelativeMonth: (date, dif) => {
         var curIndex = date.getMonth();
