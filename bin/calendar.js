@@ -37,7 +37,6 @@ function Calendar(options) {
         showToday       : true,
         previousMonth   : ' ',
         nextMonth       : ' ',
-        showOutsideDays : false,
         otherMonthClass : 'month-other'
     };
     
@@ -105,17 +104,9 @@ function Calendar(options) {
             day = {};
 
             if (w === 0 && d < firstDate.getDay()) {
-                // Day of Previous Month
-                if (options.showOutsideDays) {
-                    date = this.addDaysToDate(firstDate, d - firstDate.getDay());
-                }
+                date = this.addDaysToDate(firstDate, d - firstDate.getDay());
             } else if (i > lastDate.getDate()) {
-                // Day of Next Month
-                if (options.showOutsideDays) {
-                    debugger;
-                    date = this.addDaysToDate(lastDate, (i - monthDays));
-                }
-
+                date = this.addDaysToDate(lastDate, (i - monthDays));
                 i += 1;
                 d = 7;
             } else {
