@@ -1,44 +1,46 @@
 const DAYNAMES = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday'
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
 ];
 
 const MONTHNAMES = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
 ];
 
+const NOW = new Date();
+
 function Calendar(options) {
-    options = options || {};
+  options = options || {};
 
-    var data = this.data = {};
-    var now  = this.now  = new Date();
+  var data = this.data = {};
 
-    var defaults = {
-        year            : now.getFullYear(),
-        month           : now.getMonth(),
-        abbreviate      : 2,
-        firstDayOfWeek  : 0,
-        showToday       : true,
-        previousMonth   : ' ',
-        nextMonth       : ' ',
-        otherMonthClass : 'month-other'
-    };
+
+  var defaults = {
+    year            : NOW.getFullYear(),
+    month           : NOW.getMonth(),
+    abbreviate      : 2,
+    firstDayOfWeek  : 0,
+    showToday       : true,
+    previousMonth   : ' ',
+    nextMonth       : ' ',
+    otherMonthClass : 'month-other'
+  };
 
     var classNames,
         date,
@@ -71,7 +73,7 @@ function Calendar(options) {
     // Shift the day names array if the first day of the week isn't Sunday.
     //if (options.firstDayOfWeek < 0) {
     //    for (i = 0; i < firstDayOfWeek; i++) {
-    //        dayNames.push(dayNames.shift());
+    //        DAYNAMES.push(DAYNAMES.shift());
     //    }
     //}
 
@@ -79,8 +81,8 @@ function Calendar(options) {
     data.dayNames = [];
 
     // Abbreviate the day names when configured to do so.
-    for (i in dayNames) {
-        var dayName = dayNames[i];
+    for (i in DAYNAMES) {
+        var dayName = DAYNAMES[i];
         var dayAbbr = dayName.substr(0, options.abbreviate);
 
         if (dayAbbr !== dayName) {
@@ -115,7 +117,7 @@ function Calendar(options) {
                 date = new Date(firstDate.getFullYear(), firstDate.getMonth(), i);
 
                 i += 1;
-                if (options.showToday && date.toDateString() === now.toDateString()) {
+                if (options.showToday && date.toDateString() === NOW.toDateString()) {
                     classNames.push('today');
                 }
             }
@@ -145,6 +147,8 @@ function Calendar(options) {
     data.nextMonth     = this.getRelativeMonth(firstDate, 1);
     data.previousMonth = this.getRelativeMonth(firstDate, -1);
     data.currentMonth  = this.getMonthName(firstDate.getMonth());
+
+    this.now = NOW;
 }
 
 Calendar.prototype = {
