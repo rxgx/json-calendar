@@ -1,4 +1,4 @@
-var DAYNAMES = [
+const DAYNAMES = [
     'Sunday',
     'Monday',
     'Tuesday',
@@ -8,7 +8,7 @@ var DAYNAMES = [
     'Saturday'
 ];
 
-var MONTHNAMES = [
+const MONTHNAMES = [
     'January',
     'February',
     'March',
