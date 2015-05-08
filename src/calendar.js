@@ -39,7 +39,7 @@ function Calendar(options) {
         nextMonth       : ' ',
         otherMonthClass : 'month-other'
     };
-    
+
     var classNames,
         date,
         day,
@@ -59,7 +59,7 @@ function Calendar(options) {
     }
 
     //options["month_name_text"] ||= Date::MONTHNAMES[options["month"]]
-    
+
     firstDate = new Date(options.year, options.month, 1);
     lastDate = new Date(options.year, options.month + 1, 0);
 
@@ -119,7 +119,7 @@ function Calendar(options) {
                     classNames.push('today');
                 }
             }
-                        
+
             if (date && date.getDate) {
                 if (this.isWeekend(date)) {
                     classNames.push('weekend-day');
@@ -136,7 +136,7 @@ function Calendar(options) {
             } else {
                 day = { date: null, day: null };
             }
-            
+
             week.push(day);
         }
         this.weeks.push(week);
@@ -151,34 +151,28 @@ Calendar.prototype = {
     addDaysToDate: (date, days) => {
         return new Date(date.getFullYear(), date.getMonth(), date.getDate() + days);
     },
-    
+
     getDaysInMonth: (mo, yr) => {
         mo = mo || this.now.getMonth();
         yr = yr || this.now.getFullYear();
         return 32 - new Date(yr, mo - 1, 32).getDate();
     },
 
-    getLastDayOfWeek: (day) => {
-        if (day > 0) {
-            return day;
-        } else {
-            return 6;
-        }
-    },
+    getLastDayOfWeek: (day) => day > 0 ? day : 6,
 
     getDayName: (index) => DAYNAMES[index],
-    
+
     getMonthName: (index) => MONTHNAMES[index],
-    
+
     getRelativeMonth: (date, dif) => {
         var curIndex = date.getMonth();
         var newIndex = curIndex + dif;
-        
+
         if (newIndex < 0) newIndex = 11;
         else if (newIndex > 11) newIndex = 1;
         return MONTHNAMES[newIndex];
     },
-    
+
     isWeekend: (date) => {
         var day = date.getDay();
         return (day === 0 || day === 6);
