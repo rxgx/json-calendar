@@ -1,6 +1,5 @@
-
-var Calendar = require('./src/calendar');
+var Calendar = require('../dist/calendar');
 var test = new Calendar();
 
-console.log("Weeks this month: `test.weeks.length`");
-console.log(test.monthNames);
+console.log('Weeks this month:', test.weeks.length);
+console.log('Month names', test.monthNames);
