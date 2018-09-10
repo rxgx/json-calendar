@@ -1,58 +1,60 @@
-'use strict';
+"use strict";
 
-const DAYNAMES = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday'
+var DAYNAMES = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
 ];
 
-const MONTHNAMES = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
+var MONTHNAMES = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
 ];
 
-const NOW = new Date();
-
-export default class Calendar {
-  data = {}
-  monthNames = MONTHNAMES
-  now = NOW
-  weeks = []
-
-  constructor (options) {
+class Calendar {
+  constructor(options) {
     options = options || {};
+
+    this.monthNames = MONTHNAMES;
+    this.today = new Date();
+    this.weeks = [];
+    this.data = {};
 
     var data = this.data;
 
     var defaults = {
-      year: NOW.getFullYear(),
-      month: NOW.getMonth(),
+      year: this.today.getFullYear(),
+      month: this.today.getMonth(),
       abbreviate: 2,
       firstDayOfWeek: 0,
       showToday: true,
-      previousMonth: ' ',
-      nextMonth: ' ',
-      otherMonthClass: 'month-other'
+      previousMonth: " ",
+      nextMonth: " ",
+      otherMonthClass: "month-other"
     };
 
     var classNames, date, day, firstDate, lastDate, monthDays, week;
 
     for (var prop in defaults) {
-      if (defaults.hasOwnProperty(prop) && !options.hasOwnProperty(prop) && defaults[prop]) {
+      if (
+        defaults.hasOwnProperty(prop) &&
+        !options.hasOwnProperty(prop) &&
+        defaults[prop]
+      ) {
         options[prop] = defaults[prop];
       }
     }
@@ -62,7 +64,10 @@ export default class Calendar {
     firstDate = new Date(options.year, options.month, 1);
     lastDate = new Date(options.year, options.month + 1, 0);
 
-    monthDays = this.getDaysInMonth(firstDate.getFullYear(), firstDate.getMonth());
+    monthDays = this.getDaysInMonth(
+      firstDate.getFullYear(),
+      firstDate.getMonth()
+    );
 
     // firstDayOfWeek = options.firstDayOfWeek;
     // lastDayOfWeek = this.getLastDayOfWeek(options.firstDayOfWeek);
@@ -83,9 +88,9 @@ export default class Calendar {
       var dayAbbr = dayName.substr(0, options.abbreviate);
 
       if (dayAbbr !== dayName) {
-        data.dayNames[i] = {name: dayName, abbr: dayAbbr};
+        data.dayNames[i] = { name: dayName, abbr: dayAbbr };
       } else {
-        data.dayNames[i] = {name: dayName};
+        data.dayNames[i] = { name: dayName };
       }
     }
 
@@ -103,27 +108,30 @@ export default class Calendar {
         if (w === 0 && d < firstDate.getDay()) {
           date = this.addDaysToDate(firstDate, d - firstDate.getDay());
         } else if (i > lastDate.getDate()) {
-          date = this.addDaysToDate(lastDate, (i - monthDays));
+          date = this.addDaysToDate(lastDate, i - monthDays);
           i += 1;
           d = 7;
         } else {
           // Day of Current Month
-          classNames.push('month-day');
+          classNames.push("month-day");
           date = new Date(firstDate.getFullYear(), firstDate.getMonth(), i);
 
           i += 1;
-          if (options.showToday && date.toDateString() === NOW.toDateString()) {
-            classNames.push('today');
+          if (
+            options.showToday &&
+            date.toDateString() === this.today.toDateString()
+          ) {
+            classNames.push("today");
           }
         }
 
         if (date && date.getDate) {
           if (this.isWeekend(date)) {
-            classNames.push('weekend-day');
+            classNames.push("weekend-day");
           }
 
-          day.className = classNames.join(' ');
-          day.id = 'day' + date.getDate();
+          day.className = classNames.join(" ");
+          day.id = "day" + date.getDate();
           day.day = date.getDate();
           day.date = date;
           day.month = date.getMonth() + 1;
@@ -131,7 +139,7 @@ export default class Calendar {
 
           date = undefined;
         } else {
-          day = {date: null, day: null};
+          day = { date: null, day: null };
         }
 
         week.push(day);
@@ -144,23 +152,29 @@ export default class Calendar {
     data.currentMonth = this.getMonthName(firstDate.getMonth());
   }
 
-  addDaysToDate = (date, days) => {
+  addDaysToDate(date, days) {
     return new Date(date.getFullYear(), date.getMonth(), date.getDate() + days);
   }
 
-  getDaysInMonth = (mo, yr) => {
-    mo = mo || this.now.getMonth();
-    yr = yr || this.now.getFullYear();
+  getDaysInMonth(mo, yr) {
+    mo = mo || this.today.getMonth();
+    yr = yr || this.today.getFullYear();
     return 32 - new Date(yr, mo - 1, 32).getDate();
   }
 
-  getLastDayOfWeek = (day) => day > 0 ? day : 6
+  getLastDayOfWeek(day) {
+    return day > 0 ? day : 6;
+  }
 
-  getDayName = (index) => DAYNAMES[index]
+  getDayName(index) {
+    return DAYNAMES[index];
+  }
 
-  getMonthName = (index) => MONTHNAMES[index]
+  getMonthName(index) {
+    return MONTHNAMES[index];
+  }
 
-  getRelativeMonth = (date, dif) => {
+  getRelativeMonth(date, dif) {
     var curIndex = date.getMonth();
     var newIndex = curIndex + dif;
 
@@ -169,8 +183,10 @@ export default class Calendar {
     return MONTHNAMES[newIndex];
   }
 
-  isWeekend = (date) => {
+  isWeekend(date) {
     var day = date.getDay();
-    return (day === 0 || day === 6);
+    return day === 0 || day === 6;
   }
 }
+
+module.exports = Calendar;
