@@ -1,11 +1,13 @@
 {
   "name": "json-calendar",
   "version": "1.2.0",
-  "description": "A data model for working with dates and date ranges on a calendar.",
+  "description": "A data model for displaying dates and date ranges on a calendar interface.",
   "keywords": [
     "json",
     "calendar",
-    "date"
+    "date",
+    "date picker",
+    "date range"
   ],
   "homepage": "https://github.com/rxgx/json-calendar",
   "license": "MIT",
