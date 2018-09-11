@@ -18,7 +18,9 @@
   "main": "index.js",
   "scripts": {
     "start": "echo \"Error: Need to add start script\" && exit 1",
-    "test": "eslint index.js"
+    "lint": "eslint index.js",
+    "test": "jest",
+    "verify": "npm run lint && npm t"
   },
   "repository": {
     "type": "git",
@@ -42,6 +44,10 @@
     ],
     "rules": {
       "prettier/prettier": "error"
+    },
+    "globals": {
+      "expect": true,
+      "test": true
     }
   }
 }
