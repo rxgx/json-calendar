@@ -16,5 +16,6 @@ test("has date for today", () => {
 
 test("has week arrays with 7 days", () => {
   expect(Array.isArray(cal.weeks)).toBe(true);
-  expect(cal.weeks[0].length).toBe(7);
+  expect(cal.weeks[1].length).toBe(7);
+  expect(typeof cal.weeks[1][1].className).toBe("string");
 });
