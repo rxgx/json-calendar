@@ -38,7 +38,7 @@ class Calendar {
 
     var defaults = {
       year: this.today.getFullYear(),
-      month: this.today.getMonth(),
+      monthIndex: this.today.getMonth(),
       abbreviate: 2,
       firstDayOfWeek: 0,
       showToday: true,
@@ -61,13 +61,10 @@ class Calendar {
 
     // options["month_name_text"] ||= Date::MONTHNAMES[options["month"]]
 
-    firstDate = new Date(options.year, options.month, 1);
-    lastDate = new Date(options.year, options.month + 1, 0);
+    firstDate = new Date(options.year, options.monthIndex, 1);
+    lastDate = new Date(options.year, options.monthIndex + 1, 0);
 
-    monthDays = this.getDaysInMonth(
-      firstDate.getFullYear(),
-      firstDate.getMonth()
-    );
+    monthDays = lastDate.getDate();
 
     // firstDayOfWeek = options.firstDayOfWeek;
     // lastDayOfWeek = this.getLastDayOfWeek(options.firstDayOfWeek);
@@ -106,17 +103,23 @@ class Calendar {
         day = {};
 
         if (w === 0 && d < firstDate.getDay()) {
-          date = this.addDaysToDate(firstDate, d - firstDate.getDay());
-        } else if (i > lastDate.getDate()) {
-          date = this.addDaysToDate(lastDate, i - monthDays);
+          // Day of Previous Month
+          date = new Date(
+            firstDate.getFullYear(),
+            firstDate.getMonth(),
+            -(6 - d) + 1
+          );
+        } else if (i > monthDays) {
+          // Day of Next Month
+          date = new Date(firstDate.getFullYear(), firstDate.getMonth(), i);
           i += 1;
-          d = 7;
         } else {
           // Day of Current Month
           classNames.push("month-day");
           date = new Date(firstDate.getFullYear(), firstDate.getMonth(), i);
 
           i += 1;
+
           if (
             options.showToday &&
             date.toDateString() === this.today.toDateString()
@@ -131,10 +134,10 @@ class Calendar {
           }
 
           day.className = classNames.join(" ");
-          day.id = "day" + date.getDate();
+          day.id = "day" + date.getTime();
           day.day = date.getDate();
           day.date = date;
-          day.month = date.getMonth() + 1;
+          day.monthIndex = date.getMonth();
           day.year = date.getFullYear();
 
           date = undefined;
@@ -144,6 +147,7 @@ class Calendar {
 
         week.push(day);
       }
+
       this.weeks.push(week);
     }
 
@@ -152,14 +156,14 @@ class Calendar {
     data.currentMonth = this.getMonthName(firstDate.getMonth());
   }
 
-  addDaysToDate(date, days) {
-    return new Date(date.getFullYear(), date.getMonth(), date.getDate() + days);
+  addDaysToDate(date, offset) {
+    return new Date(date.getTime() + offset * 24 * 60 * 60 * 1000);
   }
 
-  getDaysInMonth(mo, yr) {
-    mo = mo || this.today.getMonth();
+  getDaysInMonth(yr, mo) {
     yr = yr || this.today.getFullYear();
-    return 32 - new Date(yr, mo - 1, 32).getDate();
+    mo = mo || this.today.getMonth();
+    return new Date(yr, mo + 1, 0).getDate();
   }
 
   getLastDayOfWeek(day) {
