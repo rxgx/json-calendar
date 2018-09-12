@@ -29,10 +29,16 @@ class Calendar {
   constructor(options) {
     options = options || {};
 
+    const today = new Date();
+
     this.monthNames = MONTHNAMES;
-    this.today = new Date();
     this.weeks = [];
     this.data = {};
+    this.today = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate()
+    );
 
     var data = this.data;
 

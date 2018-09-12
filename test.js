@@ -10,6 +10,12 @@ test("has month names", () => {
   expect(Array.isArray(subject.monthNames)).toBe(true);
 });
 
+test("has today's date", () => {
+  expect(subject.today.getHours()).toBe(0);
+  expect(subject.today.getMinutes()).toBe(0);
+  expect(subject.today.getHours()).toBe(0);
+});
+
 test("has date for today", () => {
   expect(subject.today instanceof Date).toBe(true);
 });
