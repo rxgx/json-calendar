@@ -39,9 +39,3 @@ Will output all the elements as the day number:
 ```js
 console.log("Month names", data.monthNames);
 ```
-
-| <   | <td colspan=5>September</td> | >   |
-| --- | ---------------------------- | --- |
-| s   | m                            | t   | w | r | f | s |
-| 26  | 27                           | 28  | 29 | 30 | 31 | 1 |
-| 2   | 3                            | 4   | 5 | 6 | 7 | 8 |
