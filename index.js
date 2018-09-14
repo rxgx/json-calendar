@@ -26,21 +26,20 @@ var MONTHNAMES = [
 ];
 
 class Calendar {
-  constructor(options) {
-    options = options || {};
+  constructor(params) {
+    params = params || {};
 
-    const today = new Date();
+    const today = params.today || new Date();
 
     this.monthNames = MONTHNAMES;
     this.weeks = [];
-    this.data = {};
     this.today = new Date(
       today.getFullYear(),
       today.getMonth(),
       today.getDate()
     );
 
-    var data = this.data;
+    var data = {};
 
     var defaults = {
       year: this.today.getFullYear(),
@@ -53,34 +52,14 @@ class Calendar {
       otherMonthClass: "month-other"
     };
 
+    var options = Object.assign({}, defaults, params);
+
     var classNames, date, day, firstDate, lastDate, monthDays, week;
-
-    for (var prop in defaults) {
-      if (
-        defaults.hasOwnProperty(prop) &&
-        !options.hasOwnProperty(prop) &&
-        defaults[prop]
-      ) {
-        options[prop] = defaults[prop];
-      }
-    }
-
-    // options["month_name_text"] ||= Date::MONTHNAMES[options["month"]]
 
     firstDate = new Date(options.year, options.monthIndex, 1);
     lastDate = new Date(options.year, options.monthIndex + 1, 0);
 
     monthDays = lastDate.getDate();
-
-    // firstDayOfWeek = options.firstDayOfWeek;
-    // lastDayOfWeek = this.getLastDayOfWeek(options.firstDayOfWeek);
-
-    // Shift the day names array if the first day of the week isn't Sunday.
-    // if (options.firstDayOfWeek < 0) {
-    //    for (i = 0; i < firstDayOfWeek; i++) {
-    //        DAYNAMES.push(DAYNAMES.shift());
-    //    }
-    // }
 
     // Start storing the JSON data into an object.
     data.dayNames = [];
@@ -160,6 +139,8 @@ class Calendar {
     data.nextMonth = this.getRelativeMonth(firstDate, 1);
     data.previousMonth = this.getRelativeMonth(firstDate, -1);
     data.currentMonth = this.getMonthName(firstDate.getMonth());
+
+    this.data = data;
   }
 
   addDaysToDate(date, offset) {
