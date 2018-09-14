@@ -17,10 +17,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "echo \"Error: Need to add start script\" && exit 1",
     "lint": "eslint .",
     "test": "TZ=America/Phoenix jest",
-    "verify": "npm run lint && npm t"
+    "prepublish": "npm run lint && npm t"
   },
   "repository": {
     "type": "git",
