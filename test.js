@@ -21,9 +21,7 @@ test("has today's date", () => {
 
 test("has given date", () => {
   var today = new Date(2018, 12, 31, 0, 0);
-  console.log("today >> ", today);
   var calendar = new JsonCalendar({ today });
-  console.log("cal >>", calendar.today);
   expect(calendar.today instanceof Date).toBe(true);
   expect(calendar.today.getFullYear()).toBe(today.getFullYear());
   expect(calendar.today.getMonth()).toBe(today.getMonth());
