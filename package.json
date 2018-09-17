@@ -1,6 +1,6 @@
 {
   "name": "json-calendar",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "A data model for displaying dates and date ranges on a calendar interface.",
   "keywords": [
     "json",
@@ -19,7 +19,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "TZ=America/Phoenix jest",
-    "prepublish": "npm run lint && npm t"
+    "verify": "npm run lint && npm t"
   },
   "repository": {
     "type": "git",

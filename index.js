@@ -26,57 +26,72 @@ var MONTHNAMES = [
 ];
 
 class Calendar {
-  constructor(params) {
-    params = params || {};
+  constructor(params = {}) {
+    const now = params.today || new Date();
 
-    const today = params.today || new Date();
-
-    this.monthNames = MONTHNAMES;
-    this.weeks = [];
-    this.today = new Date(
-      today.getFullYear(),
-      today.getMonth(),
-      today.getDate()
-    );
-
-    var data = {};
-
-    var defaults = {
-      year: this.today.getFullYear(),
-      monthIndex: this.today.getMonth(),
+    const defaults = {
+      year: now.getFullYear(),
+      monthIndex: now.getMonth(),
       abbreviate: 2,
       firstDayOfWeek: 0,
       showToday: true,
       previousMonth: " ",
-      nextMonth: " ",
-      otherMonthClass: "month-other"
+      nextMonth: " "
     };
 
-    var options = Object.assign({}, defaults, params);
+    this.options = Object.assign({}, defaults, params);
 
-    var classNames, date, day, firstDate, lastDate, monthDays, week;
+    this.monthNames = MONTHNAMES;
 
-    firstDate = new Date(options.year, options.monthIndex, 1);
-    lastDate = new Date(options.year, options.monthIndex + 1, 0);
+    this.today = this.createDate(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate()
+    );
 
-    monthDays = lastDate.getDate();
+    var data = {};
 
     // Start storing the JSON data into an object.
     data.dayNames = [];
 
     // Abbreviate the day names when configured to do so.
-    for (var i = 0, len = DAYNAMES.length; i < len; i++) {
-      var dayName = DAYNAMES[i];
-      var dayAbbr = dayName.substr(0, options.abbreviate);
+    for (var index = 0, len = DAYNAMES.length; index < len; index++) {
+      var dayName = DAYNAMES[index];
+      var dayAbbr = dayName.substr(0, this.options.abbreviate);
 
       if (dayAbbr !== dayName) {
-        data.dayNames[i] = { name: dayName, abbr: dayAbbr };
+        data.dayNames[index] = { name: dayName, abbr: dayAbbr };
       } else {
-        data.dayNames[i] = { name: dayName };
+        data.dayNames[index] = { name: dayName };
       }
     }
 
-    i = 1;
+    this.buildWeeksArray();
+
+    // data.nextMonth = this.getRelativeMonth(firstDate, 1);
+    // data.previousMonth = this.getRelativeMonth(firstDate, -1);
+    // data.currentMonth = this.getMonthName(firstDate.getMonth());
+
+    this.data = data;
+  }
+
+  addDaysToDate(date, offset) {
+    return new Date(date.getTime() + offset * 24 * 60 * 60 * 1000);
+  }
+
+  buildWeeksArray() {
+    var classNames;
+    var date;
+    var day;
+    var i = 1;
+    var week;
+    var options = this.options;
+
+    this.weeks = [];
+
+    var firstDate = this.createDate(options.year, options.monthIndex, 1);
+    var monthDays = this.getDaysInMonth(options.year, options.monthIndex);
+    var firstDateIndex = firstDate.getDay();
 
     // Loop through week indexes (0..6)
     for (var w = 0; w < 6; w++) {
@@ -87,21 +102,29 @@ class Calendar {
         classNames = [];
         day = {};
 
-        if (w === 0 && d < firstDate.getDay()) {
+        if (w === 0 && d < firstDateIndex) {
           // Day of Previous Month
-          date = new Date(
+          date = this.createDate(
             firstDate.getFullYear(),
             firstDate.getMonth(),
-            -(6 - d) + 1
+            1 - (firstDateIndex - d)
           );
         } else if (i > monthDays) {
           // Day of Next Month
-          date = new Date(firstDate.getFullYear(), firstDate.getMonth(), i);
+          date = this.createDate(
+            firstDate.getFullYear(),
+            firstDate.getMonth(),
+            i
+          );
           i += 1;
         } else {
           // Day of Current Month
           classNames.push("month-day");
-          date = new Date(firstDate.getFullYear(), firstDate.getMonth(), i);
+          date = this.createDate(
+            firstDate.getFullYear(),
+            firstDate.getMonth(),
+            i
+          );
 
           i += 1;
 
@@ -135,16 +158,16 @@ class Calendar {
 
       this.weeks.push(week);
     }
-
-    data.nextMonth = this.getRelativeMonth(firstDate, 1);
-    data.previousMonth = this.getRelativeMonth(firstDate, -1);
-    data.currentMonth = this.getMonthName(firstDate.getMonth());
-
-    this.data = data;
   }
 
-  addDaysToDate(date, offset) {
-    return new Date(date.getTime() + offset * 24 * 60 * 60 * 1000);
+  changeMonth(year, monthIndex) {
+    this.options.year = year;
+    this.options.monthIndex = monthIndex;
+    this.buildWeeksArray();
+  }
+
+  createDate(yr, mo, day) {
+    return new Date(yr, mo, day, 0, 0);
   }
 
   getDaysInMonth(yr, mo) {

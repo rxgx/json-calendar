@@ -19,7 +19,7 @@ test("has today's date", () => {
   expect(subject.today.getHours()).toBe(0);
 });
 
-test("has given date", () => {
+test("uses given today param", () => {
   var today = new Date(2018, 12, 31, 0, 0);
   var calendar = new JsonCalendar({ today });
   expect(calendar.today instanceof Date).toBe(true);
@@ -35,6 +35,32 @@ test("has week arrays with 7 days", () => {
   expect(subject.weeks[0].length).toBe(7);
   expect(subject.weeks[lastWeekIndex].length).toBe(7);
   expect(typeof subject.weeks[1][1].className).toBe("string");
+});
+
+test("displays October 2018 correctly", () => {
+  var today = new Date(2018, 12, 1, 0, 0);
+  var calendar = new JsonCalendar({ year: 2018, monthIndex: 9, today });
+  expect(calendar.weeks[0][0].day).toBe(30);
+  expect(calendar.weeks[0][0].date.getMonth()).toBe(8);
+  expect(calendar.weeks[0][1].day).toBe(1);
+  expect(calendar.weeks[0][1].date.getMonth()).toBe(9);
+});
+
+test("add days to date", () => {
+  const date = new Date(2018, 8, 29, 0, 0);
+  expect(subject.addDaysToDate(date, 0).getDate()).toBe(date.getDate());
+  expect(subject.addDaysToDate(date, -3).getDate()).toBe(26);
+  expect(subject.addDaysToDate(date, 10).getDate()).toBe(9);
+});
+
+test("creates a date without time", () => {
+  var date = subject.createDate(2018, 11, 32, 0, 0);
+  expect(date instanceof Date).toBe(true);
+  expect(date.getFullYear()).toBe(2019);
+  expect(date.getMonth()).toBe(0);
+  expect(date.getDate()).toBe(1);
+  expect(date.getMinutes()).toBe(0);
+  expect(date.getHours()).toBe(0);
 });
 
 test("get days in month", () => {
