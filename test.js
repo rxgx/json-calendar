@@ -71,3 +71,10 @@ test("get days in month", () => {
   // leap year
   expect(subject.getDaysInMonth(2008, 1)).toBe(29);
 });
+
+test("accepts change month", () => {
+  const calendar = new JsonCalendar();
+  calendar.changeMonth(2019, 3);
+  expect(calendar.options.monthIndex).toBe(3);
+  expect(calendar.options.year).toBe(2019);
+});
