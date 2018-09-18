@@ -82,77 +82,88 @@ const LANGUAGES = {
 };
 
 class Calendar {
-  constructor(params = {}) {
-    const now = params.today || new Date();
+  constructor(props = {}, callback = undefined) {
+    // Use the provided value for today or use current date
+    const now = props.today instanceof Date ? props.today : new Date();
 
     // filter language
-    params.language = LANGUAGES[params.language] || LANGUAGES.english;
+    props.language = LANGUAGES[props.language] || LANGUAGES.english;
 
-    const defaults = {
+    const defaultState = {
       year: now.getFullYear(),
       monthIndex: now.getMonth(),
-      abbreviate: 2,
+      abbreviate: 0,
       firstDayOfWeek: 0,
       showToday: true,
       previousMonth: " ",
       nextMonth: " "
     };
 
-    this.options = Object.assign({}, defaults, params);
-
-    this.dayNames = DAYNAMES[this.options.language];
-    this.monthNames = MONTHNAMES[this.options.language];
-
-    this.today = this.createDate(
+    props.today = this.createDate(
       now.getFullYear(),
       now.getMonth(),
       now.getDate()
     );
 
-    var data = {};
+    var state = Object.assign({}, defaultState, props);
+
+    var dayNames = DAYNAMES[props.language];
+
+    this.dayNames = [];
+    this.monthNames = MONTHNAMES[props.language];
 
     // Start storing the JSON data into an object.
-    data.dayNames = [];
 
     // Abbreviate the day names when configured to do so.
-    for (var index = 0, len = this.dayNames.length; index < len; index++) {
-      var dayAbbr;
-      var dayName = this.dayNames[index];
+    for (var index = 0, len = dayNames.length; index < len; index++) {
+      var dayName = dayNames[index];
 
-      if (this.options.abbreviate) {
-        dayAbbr = dayName.substr(0, this.options.abbreviate);
-        data.dayNames[index] = { name: dayName, abbr: dayAbbr };
-      } else {
-        data.dayNames[index] = { name: dayName };
+      if (state.abbreviate) {
+        dayName = dayName.substr(0, state.abbreviate);
       }
+
+      this.dayNames[index] = dayName;
     }
 
-    this.buildWeeksArray();
-    this.data = data;
+    if (callback) this.callback = callback;
+
+    this.state = state;
+    this.createWeeksForMonth();
   }
 
   addDaysToDate(date, offset) {
     return new Date(date.getTime() + offset * 24 * 60 * 60 * 1000);
   }
 
-  buildWeeksArray() {
+  createDate(yr, mo, day) {
+    return new Date(yr, mo, day, 0, 0);
+  }
+
+  createWeeksForMonth(monthIndex, year = undefined) {
+    monthIndex =
+      typeof monthIndex === "number" ? monthIndex : this.state.monthIndex;
+
+    year = year || this.state.year;
+
+    var nextState = Object.assign({}, this.state, { monthIndex, year });
+
     var classNames;
     var date;
     var day;
     var i = 1;
     var week;
-    var options = this.options;
 
-    this.weeks = [];
+    // Start storing the JSON data into an object.
+    var weeks = [];
 
-    var firstDate = this.createDate(options.year, options.monthIndex, 1);
-    var monthDays = this.getDaysInMonth(options.year, options.monthIndex);
+    var firstDate = this.createDate(year, monthIndex, 1);
+    var monthDays = this.getDaysInMonth(year, monthIndex);
     var firstDateIndex = firstDate.getDay();
 
     // Loop through week indexes (0..6)
     for (var w = 0; w < 6; w++) {
       week = [];
-      var { firstDayOfWeek } = this.options;
+      var { firstDayOfWeek } = this.state;
 
       // Loop through the day index (0..6) for each week.
       for (var d = firstDayOfWeek; d < firstDayOfWeek + 7; d++) {
@@ -186,8 +197,8 @@ class Calendar {
           i += 1;
 
           if (
-            options.showToday &&
-            date.toDateString() === this.today.toDateString()
+            nextState.showToday &&
+            date.toDateString() === nextState.today.toDateString()
           ) {
             classNames.push("today");
           }
@@ -209,23 +220,17 @@ class Calendar {
         week.push(day);
       }
 
-      this.weeks.push(week);
+      weeks.push(week);
     }
-  }
 
-  changeMonth(year, monthIndex) {
-    this.options.year = year;
-    this.options.monthIndex = monthIndex;
-    this.buildWeeksArray();
-  }
-
-  createDate(yr, mo, day) {
-    return new Date(yr, mo, day, 0, 0);
+    nextState.weeks = weeks;
+    this.state = nextState;
+    if (this.callback) this.callback(nextState);
   }
 
   getDaysInMonth(yr, mo) {
-    yr = yr || this.today.getFullYear();
-    mo = mo || this.today.getMonth();
+    yr = yr || this.state.today.getFullYear();
+    mo = mo || this.state.today.getMonth();
     return new Date(yr, mo + 1, 0).getDate();
   }
 
