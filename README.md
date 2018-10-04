@@ -7,6 +7,9 @@ A (JSON) data model for displaying dates and date ranges on a calendar interface
 ```js
 var Calendar = require("../index");
 var data = new Calendar();
+
+// with custom today date
+var  = new Calendar({ today: new Date(1971, 0, 1) });
 ```
 
 ### Get an array of weeks in this month
