@@ -1,5 +1,7 @@
 # json-calendar
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rxgx/json-calendar.svg)](https://greenkeeper.io/)
+
 A (JSON) data model for displaying dates and date ranges on a calendar interface.
 
 ### Usage
