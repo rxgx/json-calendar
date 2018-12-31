@@ -1,21 +1,24 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["GitHub Action for npm", "GitHub Action for npm-1"]
+  resolves = [
+    "dependencies",
+    "test",
+  ]
 }
 
-action "GitHub Action for npm" {
+action "dependencies" {
   uses = "actions/npm@e7aaefe"
   args = "install --no-progress"
 }
 
-action "GitHub Action for npm-2" {
+action "lint" {
   uses = "actions/npm@e7aaefe"
-  needs = ["GitHub Action for npm"]
   args = "run lint"
+  needs = ["dependencies"]
 }
 
-action "GitHub Action for npm-1" {
+action "test" {
   uses = "actions/npm@e7aaefe"
-  needs = ["GitHub Action for npm-2"]
   args = "run test -- --all --bail"
+  needs = ["lint"]
 }
