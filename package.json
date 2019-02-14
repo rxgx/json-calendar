@@ -46,7 +46,8 @@
     },
     "globals": {
       "expect": true,
-      "test": true
+      "test": true,
+      "describe": true
     }
   }
 }

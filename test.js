@@ -78,3 +78,24 @@ test("accepts change month", () => {
   expect(calendar.options.monthIndex).toBe(3);
   expect(calendar.options.year).toBe(2019);
 });
+
+describe("uses firstDayOfWeek param", () => {
+  test("month starts on correct day when firstDayOfWeek is 0", () => {
+    const calendar = new JsonCalendar({
+      year: 2019,
+      monthIndex: 1,
+      firstDayOfWeek: 0
+    });
+
+    expect(calendar.weeks[0][0].day).toBe(27);
+  });
+  test("month starts on correct day when firstDayOfWeek is 1", () => {
+    const calendar = new JsonCalendar({
+      year: 2019,
+      monthIndex: 1,
+      firstDayOfWeek: 1
+    });
+
+    expect(calendar.weeks[0][0].day).toBe(28);
+  });
+});
