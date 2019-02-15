@@ -96,9 +96,10 @@ class Calendar {
     // Loop through week indexes (0..6)
     for (var w = 0; w < 6; w++) {
       week = [];
+      var { firstDayOfWeek } = this.options;
 
       // Loop through the day index (0..6) for each week.
-      for (var d = 0; d < 7; d++) {
+      for (var d = firstDayOfWeek; d < firstDayOfWeek + 7; d++) {
         classNames = [];
         day = {};
 
