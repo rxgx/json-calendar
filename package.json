@@ -49,5 +49,9 @@
       "test": true,
       "describe": true
     }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageDirectory": "coverage"
   }
 }
