@@ -1,6 +1,5 @@
 # json-calendar
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/rxgx/json-calendar.svg)](https://greenkeeper.io/)
 [![codecov](https://codecov.io/gh/rxgx/json-calendar/branch/master/graph/badge.svg)](https://codecov.io/gh/rxgx/json-calendar)
 
 A (JSON) data model for displaying dates and date ranges on a calendar interface.
