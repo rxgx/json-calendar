@@ -3,7 +3,7 @@ version: 2.1
 executors:
   nodejs:
     docker:
-      - image: circleci/node:10.11
+      - image: circleci/node:10.15
     working_directory: ~/json-calendar
 
 commands:
