@@ -1,33 +1,92 @@
 "use strict";
 
-var DAYNAMES = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
+var DAYNAMES = {
+  english: [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ],
+  french: [
+    "Dimanche",
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi"
+  ],
+  spanish: [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado"
+  ]
+};
 
-var MONTHNAMES = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
+var MONTHNAMES = {
+  english: [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ],
+  french: [
+    "Janvier",
+    "Février",
+    "Mars",
+    "Avril",
+    "Mai",
+    "Juin",
+    "Juillet",
+    "Août",
+    "Septembre",
+    "Octobre",
+    "Novembre",
+    "Décembre"
+  ],
+  spanish: [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre"
+  ]
+};
+
+const LANGUAGES = {
+  english: "english",
+  french: "french",
+  spanish: "spanish"
+};
 
 class Calendar {
   constructor(params = {}) {
     const now = params.today || new Date();
+
+    // filter language
+    params.language = LANGUAGES[params.language] || LANGUAGES.english;
 
     const defaults = {
       year: now.getFullYear(),
@@ -41,7 +100,8 @@ class Calendar {
 
     this.options = Object.assign({}, defaults, params);
 
-    this.monthNames = MONTHNAMES;
+    this.monthNames = MONTHNAMES[this.options.language];
+    this.dayNames = DAYNAMES[this.options.language];
 
     this.today = this.createDate(
       now.getFullYear(),
@@ -55,8 +115,8 @@ class Calendar {
     data.dayNames = [];
 
     // Abbreviate the day names when configured to do so.
-    for (var index = 0, len = DAYNAMES.length; index < len; index++) {
-      var dayName = DAYNAMES[index];
+    for (var index = 0, len = this.dayNames.length; index < len; index++) {
+      var dayName = this.dayNames[index];
       var dayAbbr = dayName.substr(0, this.options.abbreviate);
 
       if (dayAbbr !== dayName) {
@@ -182,11 +242,11 @@ class Calendar {
   }
 
   getDayName(index) {
-    return DAYNAMES[index];
+    return this.dayNames[index];
   }
 
   getMonthName(index) {
-    return MONTHNAMES[index];
+    return this.monthNames[index];
   }
 
   getRelativeMonth(date, dif) {
@@ -195,7 +255,7 @@ class Calendar {
 
     if (newIndex < 0) newIndex = 11;
     else if (newIndex > 11) newIndex = 1;
-    return MONTHNAMES[newIndex];
+    return this.monthNames[newIndex];
   }
 
   isWeekend(date) {

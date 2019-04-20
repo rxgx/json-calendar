@@ -12,6 +12,26 @@ var data = new Calendar();
 
 // with custom today date
 var  = new Calendar({ today: new Date(1971, 0, 1) });
+
+// with language for days / months name
+var calendarWithSpanishNames = new Calendar({ language: 'spanish' 
+
+/**
+* 'french', 'spanish' and 'english' supported, will default to 'english' if empty or unrecognized 
+*/ 
+
+}); 
+
+calendarWithSpanishName.dayNames
+
+[ 'Domingo',
+  'Lunes',
+  'Martes',
+  'Miércoles',
+  'Jueves',
+  'Viernes',
+  'Sábado' ]
+
 ```
 
 ### Get an array of weeks in this month
