@@ -102,7 +102,7 @@ describe("uses firstDayOfWeek param", () => {
 
 describe("language parameter in constructor", () => {
   test("constructor optionally accepts a language", () => {
-    let calendar = new JsonCalendar({ language: 'french' });
+    let calendar = new JsonCalendar({ language: "french" });
     expect(calendar.options.language).toBe("french");
 
     calendar = new JsonCalendar();
@@ -118,7 +118,6 @@ describe("language parameter in constructor", () => {
 
     calendar = new JsonCalendar({ language: "esperanto" });
     expect(calendar.options.language).toBe("english");
-
   });
 });
 
@@ -152,21 +151,22 @@ describe("language for months name", () => {
     expect(novembre).toBe("Novembre");
     expect(decembre).toBe("Décembre");
 
-    expect(calendar.monthNames).toEqual(expect.arrayContaining([
-      "Janvier",
-      "Février",
-      "Mars",
-      "Avril",
-      "Mai",
-      "Juin",
-      "Juillet",
-      "Août",
-      "Septembre",
-      "Octobre",
-      "Novembre",
-      "Décembre"
-    ]));
-
+    expect(calendar.monthNames).toEqual(
+      expect.arrayContaining([
+        "Janvier",
+        "Février",
+        "Mars",
+        "Avril",
+        "Mai",
+        "Juin",
+        "Juillet",
+        "Août",
+        "Septembre",
+        "Octobre",
+        "Novembre",
+        "Décembre"
+      ])
+    );
   });
 
   test("should return spanish month name", () => {
@@ -198,21 +198,22 @@ describe("language for months name", () => {
     expect(noviembre).toBe("Noviembre");
     expect(diciembre).toBe("Diciembre");
 
-    expect(calendar.monthNames).toEqual(expect.arrayContaining([
-      "Enero",
-      "Febrero",
-      "Marzo",
-      "Abril",
-      "Mayo",
-      "Junio",
-      "Julio",
-      "Agosto",
-      "Septiembre",
-      "Octubre",
-      "Noviembre",
-      "Diciembre"
-    ]));
-
+    expect(calendar.monthNames).toEqual(
+      expect.arrayContaining([
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre"
+      ])
+    );
   });
 
   test("should return english month name", () => {
@@ -245,21 +246,22 @@ describe("language for months name", () => {
     expect(novembre).toBe("November");
     expect(decembre).toBe("December");
 
-    expect(calendar.monthNames).toEqual(expect.arrayContaining([
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ]));
-
+    expect(calendar.monthNames).toEqual(
+      expect.arrayContaining([
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ])
+    );
   });
 });
 
@@ -283,15 +285,17 @@ describe("language for day name", () => {
     expect(vendredi).toBe("Vendredi");
     expect(samedi).toBe("Samedi");
 
-    expect(calendar.dayNames).toEqual(expect.arrayContaining([
-      "Dimanche",
-      "Lundi",
-      "Mardi",
-      "Mercredi",
-      "Jeudi",
-      "Vendredi",
-      "Samedi"
-    ]));
+    expect(calendar.dayNames).toEqual(
+      expect.arrayContaining([
+        "Dimanche",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi"
+      ])
+    );
   });
 
   test("should return spanish day names", () => {
@@ -313,15 +317,17 @@ describe("language for day name", () => {
     expect(viernes).toBe("Viernes");
     expect(sabado).toBe("Sábado");
 
-    expect(calendar.dayNames).toEqual(expect.arrayContaining([
-      "Domingo",
-      "Lunes",
-      "Martes",
-      "Miércoles",
-      "Jueves",
-      "Viernes",
-      "Sábado"
-    ]));
+    expect(calendar.dayNames).toEqual(
+      expect.arrayContaining([
+        "Domingo",
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves",
+        "Viernes",
+        "Sábado"
+      ])
+    );
   });
 
   test("should return english day names", () => {
@@ -344,14 +350,16 @@ describe("language for day name", () => {
     expect(friday).toBe("Friday");
     expect(saturday).toBe("Saturday");
 
-    expect(calendar.dayNames).toEqual(expect.arrayContaining([
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ]));
+    expect(calendar.dayNames).toEqual(
+      expect.arrayContaining([
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ])
+    );
   });
 });
