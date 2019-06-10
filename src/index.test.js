@@ -1,9 +1,14 @@
-var JsonCalendar = require("./");
+var JsonCalendar = require("./index");
 
 var subject = new JsonCalendar();
 
 test("exports a class", () => {
   expect(subject instanceof JsonCalendar).toBe(true);
+});
+
+test("has day names", () => {
+  expect(Array.isArray(subject.dayNames)).toBe(true);
+  expect(Array.isArray(subject.data.dayNames)).toBe(true);
 });
 
 test("has month names", () => {
@@ -28,6 +33,27 @@ test("uses given today param", () => {
   expect(calendar.today.getHours()).toBe(0);
   expect(calendar.today.getMinutes()).toBe(0);
   expect(calendar.today.getHours()).toBe(0);
+});
+
+test("uses given today param and no abbr", () => {
+  var today = new Date(2018, 12, 31, 0, 0);
+  var calendar = new JsonCalendar({ abbreviate: 0, today });
+  expect(calendar.options.abbreviate).toBe(0);
+  expect(calendar.data.dayNames[0].abbr).toBe(undefined);
+});
+
+test("uses given today param and abbr", () => {
+  var today = new Date(2018, 12, 31, 0, 0);
+  var calendar = new JsonCalendar({ abbreviate: 3, today });
+  expect(calendar.options.abbreviate).toBe(3);
+  expect(calendar.data.dayNames[0].abbr).toBe("Sun");
+});
+
+test("uses given today param, language, and abbr", () => {
+  var today = new Date(2018, 12, 31, 0, 0);
+  var calendar = new JsonCalendar({ abbreviate: 3, language: "french", today });
+  expect(calendar.options.abbreviate).toBe(3);
+  expect(calendar.data.dayNames[0].abbr).toBe("Dim");
 });
 
 test("has week arrays with 7 days", () => {
@@ -64,6 +90,11 @@ test("creates a date without time", () => {
 });
 
 test("get days in month", () => {
+  var subject = new JsonCalendar({ today: new Date(2015, 4, 23) });
+  expect(subject.options.monthIndex).toBe(4);
+  expect(subject.options.year).toBe(2015);
+  expect(subject.getDaysInMonth()).toBe(31);
+  expect(subject.getDaysInMonth(2015)).toBe(31);
   expect(subject.getDaysInMonth(2018, 4)).toBe(31);
   expect(subject.getDaysInMonth(2018, 8)).toBe(30);
   // non-leap year
@@ -87,8 +118,10 @@ describe("uses firstDayOfWeek param", () => {
       firstDayOfWeek: 0
     });
 
+    expect(calendar.options.firstDayOfWeek).toBe(0);
     expect(calendar.weeks[0][0].day).toBe(27);
   });
+
   test("month starts on correct day when firstDayOfWeek is 1", () => {
     const calendar = new JsonCalendar({
       year: 2019,
@@ -96,6 +129,7 @@ describe("uses firstDayOfWeek param", () => {
       firstDayOfWeek: 1
     });
 
+    expect(calendar.options.firstDayOfWeek).toBe(1);
     expect(calendar.weeks[0][0].day).toBe(28);
   });
 });
