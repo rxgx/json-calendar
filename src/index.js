@@ -100,8 +100,8 @@ class Calendar {
 
     this.options = Object.assign({}, defaults, params);
 
-    this.monthNames = MONTHNAMES[this.options.language];
     this.dayNames = DAYNAMES[this.options.language];
+    this.monthNames = MONTHNAMES[this.options.language];
 
     this.today = this.createDate(
       now.getFullYear(),
@@ -116,10 +116,11 @@ class Calendar {
 
     // Abbreviate the day names when configured to do so.
     for (var index = 0, len = this.dayNames.length; index < len; index++) {
+      var dayAbbr;
       var dayName = this.dayNames[index];
-      var dayAbbr = dayName.substr(0, this.options.abbreviate);
 
-      if (dayAbbr !== dayName) {
+      if (this.options.abbreviate) {
+        dayAbbr = dayName.substr(0, this.options.abbreviate);
         data.dayNames[index] = { name: dayName, abbr: dayAbbr };
       } else {
         data.dayNames[index] = { name: dayName };
@@ -127,11 +128,6 @@ class Calendar {
     }
 
     this.buildWeeksArray();
-
-    // data.nextMonth = this.getRelativeMonth(firstDate, 1);
-    // data.previousMonth = this.getRelativeMonth(firstDate, -1);
-    // data.currentMonth = this.getMonthName(firstDate.getMonth());
-
     this.data = data;
   }
 
@@ -197,22 +193,18 @@ class Calendar {
           }
         }
 
-        if (date && date.getDate) {
-          if (this.isWeekend(date)) {
-            classNames.push("weekend-day");
-          }
-
-          day.className = classNames.join(" ");
-          day.id = "day" + date.getTime();
-          day.day = date.getDate();
-          day.date = date;
-          day.monthIndex = date.getMonth();
-          day.year = date.getFullYear();
-
-          date = undefined;
-        } else {
-          day = { date: null, day: null };
+        if (this.isWeekend(date)) {
+          classNames.push("weekend-day");
         }
+
+        day.className = classNames.join(" ");
+        day.id = "day" + date.getTime();
+        day.day = date.getDate();
+        day.date = date;
+        day.monthIndex = date.getMonth();
+        day.year = date.getFullYear();
+
+        date = undefined;
 
         week.push(day);
       }
@@ -237,25 +229,12 @@ class Calendar {
     return new Date(yr, mo + 1, 0).getDate();
   }
 
-  getLastDayOfWeek(day) {
-    return day > 0 ? day : 6;
-  }
-
   getDayName(index) {
     return this.dayNames[index];
   }
 
   getMonthName(index) {
     return this.monthNames[index];
-  }
-
-  getRelativeMonth(date, dif) {
-    var curIndex = date.getMonth();
-    var newIndex = curIndex + dif;
-
-    if (newIndex < 0) newIndex = 11;
-    else if (newIndex > 11) newIndex = 1;
-    return this.monthNames[newIndex];
   }
 
   isWeekend(date) {
