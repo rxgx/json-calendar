@@ -24,7 +24,7 @@ commands:
     steps:
       - attach_workspace:
           at: .
-      - run: npm t -- --all --bail
+      - run: npm t
 
 jobs:
   dependencies:
