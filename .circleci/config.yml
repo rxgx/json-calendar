@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@1.0.4
+
 executors:
   nodejs:
     docker:
@@ -25,6 +28,8 @@ commands:
       - attach_workspace:
           at: .
       - run: npm t
+      - codecov/upload:
+          file: coverage/*.json
 
 jobs:
   dependencies:
