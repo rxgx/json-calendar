@@ -1,6 +1,7 @@
 # json-calendar
 
 [![codecov](https://codecov.io/gh/rxgx/json-calendar/branch/master/graph/badge.svg)](https://codecov.io/gh/rxgx/json-calendar)
+[![CircleCI](https://circleci.com/gh/rxgx/json-calendar.svg?style=svg)](https://circleci.com/gh/rxgx/json-calendar)
 
 A (JSON) data model for displaying dates and date ranges on a calendar interface.
 
@@ -14,13 +15,13 @@ var data = new Calendar();
 var  = new Calendar({ today: new Date(1971, 0, 1) });
 
 // with language for days / months name
-var calendarWithSpanishNames = new Calendar({ language: 'spanish' 
+var calendarWithSpanishNames = new Calendar({ language: 'spanish'
 
 /**
-* 'french', 'spanish' and 'english' supported, will default to 'english' if empty or unrecognized 
-*/ 
+* 'french', 'spanish' and 'english' supported, will default to 'english' if empty or unrecognized
+*/
 
-}); 
+});
 
 calendarWithSpanishName.dayNames
 
