@@ -17,7 +17,7 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint *.js",
+    "lint": "eslint src/*.js",
     "test": "TZ=America/Phoenix jest",
     "verify": "npm run lint && npm t"
   },
