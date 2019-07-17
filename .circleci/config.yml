@@ -13,7 +13,7 @@ commands:
   npm_install:
     steps:
       - checkout
-      - run: npm i --no-progress
+      - run: npm ci --no-progress
       - persist_to_workspace:
           root: .
           paths: .
