@@ -1,6 +1,6 @@
 {
-  "name": "json-calendar",
-  "version": "1.7.1",
+  "name": "@rxgx/json-calendar",
+  "version": "1.7.2",
   "description": "A data model for displaying dates and date ranges on a calendar interface.",
   "keywords": [
     "json",
@@ -23,7 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rxgx/json-calendar.git"
+    "url": "git://github.com/rxgx/json-calendar.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "eslint": "6.0.1",
