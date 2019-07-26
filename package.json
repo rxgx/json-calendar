@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rxgx/json-calendar.git"
+    "ssh": "git://git@github.com/rxgx/json-calendar.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
