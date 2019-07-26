@@ -15,10 +15,18 @@
   "bugs": {
     "url": "https://github.com/rxgx/json-calendar/issues"
   },
-  "main": "src/index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "directories": {
+    "lib": "./lib"
+  },
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "lint": "eslint src/*.js",
-    "test": "TZ=America/Phoenix jest",
+    "lint": "eslint --ext .ts src",
+    "prepublish": "tsc",
+    "test": "jest",
     "verify": "npm run lint && npm t"
   },
   "repository": {
@@ -29,33 +37,19 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
-    "eslint": "6.1.0",
-    "eslint-config-prettier": "6.0.0",
-    "eslint-plugin-prettier": "3.1.0",
-    "jest": "24.8.0",
-    "prettier": "1.18.2"
+    "@types/jest": "^24.0.17",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
   },
-  "dependencies": {},
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:prettier/recommended"
-    ],
-    "rules": {
-      "prettier/prettier": "error"
-    },
-    "globals": {
-      "expect": true,
-      "test": true,
-      "describe": true
-    }
-  },
-  "jest": {
-    "collectCoverage": true,
-    "coverageDirectory": "coverage"
-  }
+  "dependencies": {}
 }

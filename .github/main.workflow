@@ -1,4 +1,4 @@
-workflow "New workflow" {
+workflow "Pull Request" {
   on = "push"
   resolves = [
     "dependencies",
