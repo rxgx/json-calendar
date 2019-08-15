@@ -8,43 +8,42 @@ A (JSON) data model for displaying dates and date ranges on a calendar interface
 ### Usage
 
 ```js
-var Calendar = require("../index");
-var data = new Calendar();
+const Calendar = require("@rxgx/json-calendar");
+const calendar = new Calendar();
 
 // with custom today date
-var  = new Calendar({ today: new Date(1971, 0, 1) });
+const calendar = new Calendar({ today: new Date(1971, 0, 1) });
 
 // with language for days / months name
-var calendarWithSpanishNames = new Calendar({ language: 'spanish'
+// 'fr', 'es' and 'en' supported, will default to 'en' if empty or unrecognized
+const calendarWithSpanishNames = new Calendar({ languageCode: 'es' });
+```
 
-/**
-* 'french', 'spanish' and 'english' supported, will default to 'english' if empty or unrecognized
-*/
+```js
+console.log(calendarWithSpanishName.dayNames.map(item => item.name));
+```
 
-});
-
-calendarWithSpanishName.dayNames
-
+```js
 [ 'Domingo',
   'Lunes',
   'Martes',
   'Miércoles',
   'Jueves',
   'Viernes',
-  'Sábado' ]
-
+  'Sábado'
+]
 ```
 
 ### Get an array of weeks in this month
 
 ```js
-console.log("Weeks this month:", data.weeks.length);
+console.log("Weeks this month:", calendar.weeks.length);
 ```
 
 You can use the returned array of arrays to render a full calendar for a given month. If, for example, the month is September of 2018:
 
 ```js
-data.weeks.map(w => w.map(d => d.day));
+calendar.weeks.map(w => w.map(d => d.day));
 ```
 
 Will output all the elements as the day number:
@@ -63,5 +62,5 @@ Will output all the elements as the day number:
 ### Get an array of month names
 
 ```js
-console.log("Month names", data.monthNames);
+console.log("Month names", calendar.monthNames);
 ```
