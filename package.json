@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "lint": "eslint --ext .ts src",
-    "prepublish": "tsc",
+    "prepublishOnly": "tsc",
     "test": "jest",
     "verify": "npm run lint && npm t"
   },
