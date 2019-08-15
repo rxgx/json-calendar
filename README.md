@@ -7,24 +7,39 @@ A (JSON) data model for displaying dates and date ranges on a calendar interface
 
 ### Usage
 
+Works default out of the box:
+
 ```js
 const Calendar = require("@rxgx/json-calendar");
 const calendar = new Calendar();
+```
 
+Or set a custom selected date:
+
+```js
 // with custom today date
 const calendar = new Calendar({ today: new Date(1971, 0, 1) });
+```
 
-// with language for days / months name
+Or use a specific language:
+
+```js
+// with language for day and month names
 // 'fr', 'es' and 'en' supported, will default to 'en' if empty or unrecognized
 const calendarWithSpanishNames = new Calendar({ languageCode: 'es' });
 ```
+
+For example: 
 
 ```js
 console.log(calendarWithSpanishName.dayNames.map(item => item.name));
 ```
 
+Returns
+
 ```js
-[ 'Domingo',
+[
+  'Domingo',
   'Lunes',
   'Martes',
   'Miércoles',
