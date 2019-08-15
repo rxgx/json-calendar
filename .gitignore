@@ -61,7 +61,7 @@ typings/
 .next
 
 # typescript destination
-dist
+lib
 
-# additions to node
+# Custom additions to node
 .vscode
