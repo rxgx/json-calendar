@@ -24,8 +24,9 @@
     "lib/**/*"
   ],
   "scripts": {
+    "build": "tsc",  
     "lint": "eslint --ext .ts src",
-    "prepublishOnly": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "jest",
     "verify": "npm run lint && npm t"
   },
