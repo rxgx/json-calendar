@@ -72,16 +72,6 @@ test('displays October 2018 correctly', () => {
   expect(calendar.weeks[0][1].date.getMonth()).toBe(9);
 });
 
-test('get days in month', () => {
-  const subject = new JsonCalendar({ today: new Date(2015, 4, 23) });
-  expect(subject.getDaysInMonth(2018, 4)).toBe(31);
-  expect(subject.getDaysInMonth(2018, 8)).toBe(30);
-  // non-leap year
-  expect(subject.getDaysInMonth(2009, 1)).toBe(28);
-  // leap year
-  expect(subject.getDaysInMonth(2008, 1)).toBe(29);
-});
-
 test('accepts change month', () => {
   const calendar = new JsonCalendar();
   calendar.changeMonth(2019, 3);
