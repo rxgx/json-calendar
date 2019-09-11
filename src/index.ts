@@ -199,9 +199,7 @@ export default class JsonCalendar {
     this.buildWeeksArray();
   }
 
-  getDaysInMonth(yr: number, mo: number): number {
-    const year = yr || this.today.getFullYear();
-    const month = mo || this.today.getMonth();
+  getDaysInMonth(year: number, month: number): number {
     return new Date(year, month + 1, 0).getDate();
   }
 
