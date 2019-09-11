@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import createDate from './createDate';
+import getDaysInMonth from './getDaysInMonth';
 import isWeekend from './isWeekend';
 import dictionary from './dictionary';
 
@@ -134,7 +135,7 @@ export default class JsonCalendar {
     const { options } = this;
 
     const firstDate = createDate(options.year, options.monthIndex, 1);
-    const monthDays = this.getDaysInMonth(options.year, options.monthIndex);
+    const monthDays = getDaysInMonth(options.year, options.monthIndex);
     const firstDateIndex = firstDate.getDay();
 
     // Loop through week indexes (0..6)
@@ -197,10 +198,6 @@ export default class JsonCalendar {
     this.options.year = year;
     this.options.monthIndex = monthIndex;
     this.buildWeeksArray();
-  }
-
-  getDaysInMonth(year: number, month: number): number {
-    return new Date(year, month + 1, 0).getDate();
   }
 
   getDayAbbr(index: number): string {
