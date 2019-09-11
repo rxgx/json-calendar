@@ -1,6 +1,6 @@
 {
   "name": "@rxgx/json-calendar",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "A data model for displaying dates and date ranges on a calendar interface.",
   "keywords": [
     "json",
@@ -24,7 +24,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "build": "tsc",  
+    "build": "tsc",
     "lint": "eslint --ext .ts src",
     "prepublishOnly": "npm run build",
     "test": "jest",
