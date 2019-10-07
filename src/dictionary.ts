@@ -1,4 +1,13 @@
-export default {
+export interface Language {
+  dayNames: string[];
+  monthNames: string[];
+}
+
+export interface Languages {
+  [key: string]: Language;
+}
+
+const languages: Languages = {
   en: {
     dayNames: [
       'Sunday',
@@ -75,3 +84,5 @@ export default {
     ],
   },
 };
+
+export default languages;

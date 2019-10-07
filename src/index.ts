@@ -7,18 +7,7 @@
 import createDate from './createDate';
 import getDaysInMonth from './getDaysInMonth';
 import isWeekend from './isWeekend';
-import dictionary from './dictionary';
-
-// enum LanguageCodes {
-//   English = 'en',
-//   French = 'fr',
-//   Spanish = 'es',
-// }
-
-// type LanguageCode =
-//   | LanguageCodes.English
-//   | LanguageCodes.French
-//   | LanguageCodes.Spanish;
+import dictionary, { Language } from './dictionary';
 
 interface CalendarParams {
   abbreviate?: number;
@@ -90,7 +79,7 @@ export default class JsonCalendar {
     this.options = Object.assign({} as CalendarOptions, defaults, params);
 
     // assign the correct month and day names for the set language code
-    let language = dictionary[this.options.languageCode];
+    let language: Language = dictionary[this.options.languageCode];
 
     // default to englist if code is incorrect
     if (!language) {
@@ -128,7 +117,6 @@ export default class JsonCalendar {
 
   private buildWeeksArray(): void {
     let classNames: string[];
-    let date: Date;
     let day: CalendarDay;
     let i = 1;
     let week: CalendarWeek;
@@ -140,6 +128,7 @@ export default class JsonCalendar {
 
     // Loop through week indexes (0..6)
     for (let w = 0; w < 6; w += 1) {
+      let date: Date;
       week = [];
       const { firstDayOfWeek } = this.options;
 
@@ -185,8 +174,6 @@ export default class JsonCalendar {
         day.monthIndex = date.getMonth();
         day.year = date.getFullYear();
 
-        date = undefined;
-
         week.push(day);
       }
 
@@ -201,7 +188,8 @@ export default class JsonCalendar {
   }
 
   getDayAbbr(index: number): string {
-    return this.dayNames[index].abbr;
+    const { abbr } = this.dayNames[index];
+    return abbr || '';
   }
 
   getDayName(index: number): string {
