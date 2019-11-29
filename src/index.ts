@@ -188,8 +188,8 @@ export default class JsonCalendar {
   }
 
   getDayAbbr(index: number): string {
-    const { abbr } = this.dayNames[index];
-    return abbr || '';
+    const dayName = this.dayNames[index];
+    return dayName?.abbr || '';
   }
 
   getDayName(index: number): string {
