@@ -8,19 +8,17 @@ pipeline {
     stages {
         stage('Prepare') {
             steps {
-                echo 'Install Dependencies'
-                sh 'npm ci --no-progress' 
+                sh 'npm i --no-progress' 
             }
         }
-        stage('Test') {
+        stage('Quality') {
             steps {
-                echo 'Jest Tests'
+                sh 'npm run lint'
                 sh 'npm t'
             }
         }
         stage('Build') {
             steps {
-                echo 'Build TypeScript'
                 sh 'npm run build --if-present'
             }
         }
