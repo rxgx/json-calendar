@@ -16,5 +16,10 @@ pipeline {
                 sh 'npm t'
             }
         }
+        stage('Build') {
+            steps {
+                sh 'npm run build --if-present'
+            }
+        }
     }
 }
