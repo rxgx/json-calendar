@@ -10,12 +10,12 @@ pipeline {
             steps {
                 sh 'npm ci --no-progress' 
             }
-        }
+        },
         stage('Test') {
             steps {
                 sh 'npm t'
             }
-        }
+        },
         stage('Build') {
             steps {
                 sh 'npm run build --if-present'
