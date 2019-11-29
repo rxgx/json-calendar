@@ -8,7 +8,12 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'npm install' 
+                sh 'npm ci --no-progress' 
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm t'
             }
         }
     }
