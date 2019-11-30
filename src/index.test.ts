@@ -299,6 +299,7 @@ describe('language for day name', () => {
     const jueves = calendar.getDayAbbr(4);
     const viernes = calendar.getDayAbbr(5);
     const sabado = calendar.getDayAbbr(6);
+    const nada = calendar.getDayAbbr(9);
 
     expect(domingo).toBe('Do');
     expect(lunes).toBe('Lu');
@@ -307,6 +308,7 @@ describe('language for day name', () => {
     expect(jueves).toBe('Ju');
     expect(viernes).toBe('Vi');
     expect(sabado).toBe('Sá');
+    expect(nada).toBe('');
   });
 
   test('should return spanish day names', () => {
