@@ -11,6 +11,14 @@ Works default out of the box:
 ```js
 const Calendar = require("@rxgx/json-calendar");
 const calendar = new Calendar();
+calendar.weeks.map(
+  week => week.days.map(
+    day => {
+      const { className, id, day, date, monthIndex, year } = day;
+      // do something with the day's data
+    }
+  )
+)
 ```
 
 Or set a custom selected date:
@@ -31,27 +39,22 @@ const calendarWithSpanishNames = new Calendar({ languageCode: 'es' });
 For example: 
 
 ```js
-console.log(calendarWithSpanishName.dayNames.map(item => item.name));
-```
-
-Returns
-
-```js
-[
-  'Domingo',
-  'Lunes',
-  'Martes',
-  'Miércoles',
-  'Jueves',
-  'Viernes',
-  'Sábado'
-]
+calendarWithSpanishName.dayNames.map(item => console.log(item.name));
+// Outputs:
+//   'Domingo'
+//   'Lunes'
+//   'Martes'
+//   'Miércoles'
+//   'Jueves'
+//   'Viernes'
+//   'Sábado'
 ```
 
 ### Get an array of weeks in this month
 
 ```js
 console.log("Weeks this month:", calendar.weeks.length);
+// Output: Weeks this month: 5
 ```
 
 You can use the returned array of arrays to render a full calendar for a given month. If, for example, the month is September of 2018:
