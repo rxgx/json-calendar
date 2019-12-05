@@ -1,3 +1,4 @@
+// Reference: https://jenkins.io/doc/tutorials/build-a-node-js-and-react-app-with-npm/
 pipeline {
     agent {
         docker {
