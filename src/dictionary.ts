@@ -1,9 +1,9 @@
-export interface Language {
+interface Language {
   dayNames: string[];
   monthNames: string[];
 }
 
-export interface Languages {
+interface Languages {
   [key: string]: Language;
 }
 

@@ -1,4 +1,4 @@
-import getDaysInMonth from './getDaysInMonth';
+import getDaysInMonth = require('./getDaysInMonth');
 
 test('get days in month', () => {
   expect(getDaysInMonth(2018, 4)).toBe(31);

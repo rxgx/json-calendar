@@ -4,10 +4,10 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import createDate from './createDate';
-import getDaysInMonth from './getDaysInMonth';
-import isWeekend from './isWeekend';
-import dictionary, { Language } from './dictionary';
+import createDate = require('./createDate');
+import getDaysInMonth = require('./getDaysInMonth');
+import isWeekend = require('./isWeekend');
+import dictionary = require('./dictionary');
 
 interface CalendarParams {
   abbreviate?: number;
@@ -79,7 +79,7 @@ export = class JsonCalendar {
     this.options = Object.assign({} as CalendarOptions, defaults, params);
 
     // assign the correct month and day names for the set language code
-    let language: Language = dictionary[this.options.languageCode];
+    let language = dictionary[this.options.languageCode];
 
     // default to englist if code is incorrect
     if (!language) {
@@ -199,4 +199,4 @@ export = class JsonCalendar {
   getMonthName(index: number): string {
     return this.monthNames[index];
   }
-}
+};

@@ -1,4 +1,4 @@
-import createDate from './createDate';
+import createDate = require('./createDate');
 
 test('creates a date without time', () => {
   const date = createDate(2018, 11, 32);
