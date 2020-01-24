@@ -85,4 +85,4 @@ const languages: Languages = {
   },
 };
 
-export default languages;
+export = languages;

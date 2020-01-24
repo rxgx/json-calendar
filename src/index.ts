@@ -49,7 +49,7 @@ interface CalendarDayName {
   name: string;
 }
 
-export default class JsonCalendar {
+export = class JsonCalendar {
   dayNames: CalendarDayName[];
 
   monthNames: string[];
