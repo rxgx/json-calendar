@@ -27,6 +27,7 @@
     "build": "tsc",
     "lint": "eslint --ext .ts src",
     "prepublishOnly": "npm run build",
+    "release": "standard-version --dry-run",
     "test": "jest",
     "verify": "npm run lint && npm t"
   },
@@ -49,6 +50,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
+    "standard-version": "^7.1.0",
     "ts-jest": "^25.0.0",
     "typescript": "^3.7.5"
   },
