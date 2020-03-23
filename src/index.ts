@@ -4,10 +4,10 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import createDate = require('./createDate');
-import getDaysInMonth = require('./getDaysInMonth');
-import isWeekend = require('./isWeekend');
-import dictionary = require('./dictionary');
+import createDate = require("./createDate");
+import getDaysInMonth = require("./getDaysInMonth");
+import isWeekend = require("./isWeekend");
+import dictionary = require("./dictionary");
 
 interface CalendarParams {
   abbreviate?: number;
@@ -68,10 +68,10 @@ export = class JsonCalendar {
     const defaults = {
       abbreviate: 2,
       firstDayOfWeek: 0,
-      languageCode: 'en',
+      languageCode: "en",
       monthIndex: now.getMonth(),
-      nextMonth: ' ',
-      previousMonth: ' ',
+      nextMonth: " ",
+      previousMonth: " ",
       showToday: true,
       year: now.getFullYear(),
     };
@@ -83,7 +83,7 @@ export = class JsonCalendar {
 
     // default to englist if code is incorrect
     if (!language) {
-      this.options.languageCode = 'en';
+      this.options.languageCode = "en";
       language = dictionary.en;
     }
 
@@ -142,7 +142,7 @@ export = class JsonCalendar {
           date = createDate(
             firstDate.getFullYear(),
             firstDate.getMonth(),
-            1 - (firstDateIndex - d),
+            1 - (firstDateIndex - d)
           );
         } else if (i > monthDays) {
           // Day of Next Month
@@ -150,7 +150,7 @@ export = class JsonCalendar {
           i += 1;
         } else {
           // Day of Current Month
-          classNames.push('month-day');
+          classNames.push("month-day");
           date = createDate(firstDate.getFullYear(), firstDate.getMonth(), i);
 
           i += 1;
@@ -159,15 +159,15 @@ export = class JsonCalendar {
             options.showToday &&
             date.toDateString() === this.today.toDateString()
           ) {
-            classNames.push('today');
+            classNames.push("today");
           }
         }
 
         if (isWeekend(date)) {
-          classNames.push('weekend-day');
+          classNames.push("weekend-day");
         }
 
-        day.className = classNames.join(' ');
+        day.className = classNames.join(" ");
         day.id = `day${date.getTime()}`;
         day.day = date.getDate();
         day.date = date;
@@ -189,7 +189,7 @@ export = class JsonCalendar {
 
   getDayAbbr(index: number): string {
     const dayName = this.dayNames[index];
-    return dayName?.abbr || '';
+    return dayName?.abbr || "";
   }
 
   getDayName(index: number): string {

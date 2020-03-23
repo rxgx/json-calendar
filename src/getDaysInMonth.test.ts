@@ -1,6 +1,6 @@
-import getDaysInMonth = require('./getDaysInMonth');
+import getDaysInMonth = require("./getDaysInMonth");
 
-test('get days in month', () => {
+test("get days in month", () => {
   expect(getDaysInMonth(2018, 4)).toBe(31);
   expect(getDaysInMonth(2018, 8)).toBe(30);
   // non-leap year

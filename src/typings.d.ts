@@ -1,4 +1,4 @@
-declare module 'dictionary.json' {
+declare module "dictionary.json" {
   export const en: {
     dayNames: string[];
     monthNames: string[];

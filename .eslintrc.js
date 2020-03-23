@@ -10,7 +10,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
-    "plugin:import/typescript",
+    'plugin:import/typescript',
   ],
   globals: {
     Atomics: 'readonly',
