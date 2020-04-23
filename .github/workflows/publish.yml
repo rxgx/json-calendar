@@ -6,21 +6,23 @@ on:
       - master
 
 jobs:
-  checkout:
-    - uses: actions/checkout@v1
-  
-  install:
+  build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
+        with:
+          node-version: 12
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
           npm run verify
+          npm run build --if-present
 
   publish:
     steps:
       - name: create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npx semantic-release
