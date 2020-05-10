@@ -74,5 +74,8 @@
       "@semantic-release/npm",
       "@semantic-release/release-notes-generator"
     ]
+  },
+  "volta": {
+    "node": "14.2.0"
   }
 }
