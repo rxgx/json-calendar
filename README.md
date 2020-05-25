@@ -79,5 +79,21 @@ Will output all the elements as the day number:
 ### Get an array of month names
 
 ```js
-console.log("Month names", calendar.monthNames);
+const Calendar = require("@rxgx/json-calendar");
+const calendar = new Calendar()
+console.log(calendar.monthNames)
+// [
+//   'January',
+//   'February',
+//   'March',
+//   'April',
+//   'May',
+//   'June',
+//   'July',
+//   'August',
+//   'September',
+//   'October',
+//   'November',
+//   'December'
+// ]
 ```
