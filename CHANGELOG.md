@@ -1,3 +1,10 @@
+## [1.8.14](https://github.com/rxgx/json-calendar/compare/v1.8.13...v1.8.14) (2020-08-21)
+
+
+### Bug Fixes
+
+* upgrade to typescript v4 ([#324](https://github.com/rxgx/json-calendar/issues/324)) ([c96bb9c](https://github.com/rxgx/json-calendar/commit/c96bb9c65bb722bd0b6bfff3b90d8fa5ad2bf90c))
+
 ## [1.8.13](https://github.com/rxgx/json-calendar/compare/v1.8.12...v1.8.13) (2020-08-20)
 
 
