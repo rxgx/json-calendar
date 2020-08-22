@@ -28,7 +28,6 @@
     "build": "tsc",
     "format": "standardx --fix **/*.ts",
     "lint": "standardx **/*.ts",
-    "prepublishOnly": "npm run build",
     "test": "jest",
     "verify": "npm run lint && npm t"
   },
