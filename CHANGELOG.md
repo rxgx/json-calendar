@@ -1,3 +1,10 @@
+## [1.8.15](https://github.com/rxgx/json-calendar/compare/v1.8.14...v1.8.15) (2020-08-22)
+
+
+### Bug Fixes
+
+* add example to readme ([6587155](https://github.com/rxgx/json-calendar/commit/6587155ed59ddc2dcaf0d952100ec8ebd1e7d6e0))
+
 ## [1.8.14](https://github.com/rxgx/json-calendar/compare/v1.8.13...v1.8.14) (2020-08-21)
 
 
