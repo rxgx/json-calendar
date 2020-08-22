@@ -1,3 +1,10 @@
+## [1.8.16](https://github.com/rxgx/json-calendar/compare/v1.8.15...v1.8.16) (2020-08-22)
+
+
+### Bug Fixes
+
+* removed rxgx scope ([68ae381](https://github.com/rxgx/json-calendar/commit/68ae381faea76e450623bf371aa80d08739786e6))
+
 ## [1.8.15](https://github.com/rxgx/json-calendar/compare/v1.8.14...v1.8.15) (2020-08-22)
 
 
