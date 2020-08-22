@@ -1,3 +1,10 @@
+## [1.8.20](https://github.com/rxgx/json-calendar/compare/v1.8.19...v1.8.20) (2020-08-22)
+
+
+### Bug Fixes
+
+* update jest to test token ([5ad3df0](https://github.com/rxgx/json-calendar/commit/5ad3df0cb4cc09223f605eb5aa71705f16210a60))
+
 ## [1.8.19](https://github.com/rxgx/json-calendar/compare/v1.8.18...v1.8.19) (2020-08-22)
 
 
