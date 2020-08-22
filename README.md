@@ -16,6 +16,7 @@ calendar.weeks.map(
     day => {
       const { className, id, day, date, monthIndex, year } = day;
       // do something with the day's data
+      return date.toLocaleString()
     }
   )
 )
