@@ -1,3 +1,12 @@
+## [1.8.18](https://github.com/rxgx/json-calendar/compare/v1.8.17...v1.8.18) (2020-08-22)
+
+
+### Bug Fixes
+
+* require npx in publish action ([1584858](https://github.com/rxgx/json-calendar/commit/1584858c709587a372a27f9b01252378b7d18ffa))
+* semantic wants npm token ([1aa4c77](https://github.com/rxgx/json-calendar/commit/1aa4c77eb18cdb94b69e433805ac47ae27a84f3a))
+* use correct action and env var ([c235032](https://github.com/rxgx/json-calendar/commit/c235032148b3b95256f4390b83c70e42f299b1a0))
+
 ## [1.8.17](https://github.com/rxgx/json-calendar/compare/v1.8.16...v1.8.17) (2020-08-22)
 
 

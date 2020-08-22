@@ -1,6 +1,6 @@
 {
   "name": "json-calendar",
-  "version": "1.8.17",
+  "version": "1.8.18",
   "description": "A data model for displaying dates and date ranges on a calendar interface.",
   "keywords": [
     "json",
