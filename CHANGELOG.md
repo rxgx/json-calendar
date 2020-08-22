@@ -1,3 +1,10 @@
+## [1.8.17](https://github.com/rxgx/json-calendar/compare/v1.8.16...v1.8.17) (2020-08-22)
+
+
+### Bug Fixes
+
+* remove npm username ([32232a0](https://github.com/rxgx/json-calendar/commit/32232a070f7757f057f53702b338f1cf91e0d7bd))
+
 ## [1.8.16](https://github.com/rxgx/json-calendar/compare/v1.8.15...v1.8.16) (2020-08-22)
 
 
