@@ -1,3 +1,10 @@
+## [1.8.19](https://github.com/rxgx/json-calendar/compare/v1.8.18...v1.8.19) (2020-08-22)
+
+
+### Bug Fixes
+
+* remove prepublish ([5db1dc7](https://github.com/rxgx/json-calendar/commit/5db1dc7a01b32964d591971cae36d2b33ae92d80))
+
 ## [1.8.18](https://github.com/rxgx/json-calendar/compare/v1.8.17...v1.8.18) (2020-08-22)
 
 
