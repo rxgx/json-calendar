@@ -15,11 +15,11 @@ npm install json-calendar
 Install for browsers, Volta, or Deno:
 
 ```js
-import {install} from 'esinstall';
- 
+import { install } from 'esinstall'
+
 await install(['json-calendar'], {
   /* options */
-});
+})
 // Result: Creates `json-calendar.js` inside a `web_modules/` directory in your current directory.
 ```
 
@@ -28,8 +28,8 @@ await install(['json-calendar'], {
 Works default out of the box:
 
 ```js
-const Calendar = require("json-calendar");
-const calendar = new Calendar();
+const Calendar = require("json-calendar")
+const calendar = new Calendar()
 calendar.weeks.map(
   week => week.days.map(
     day => {
@@ -45,7 +45,7 @@ Or set a custom selected date:
 
 ```js
 // with custom today date
-const calendar = new Calendar({ today: new Date(1971, 0, 1) });
+const calendar = new Calendar({ today: new Date(1971, 0, 1) })
 ```
 
 Or use a specific language:
@@ -53,13 +53,13 @@ Or use a specific language:
 ```js
 // with language for day and month names
 // 'fr', 'es' and 'en' supported, will default to 'en' if empty or unrecognized
-const calendarWithSpanishNames = new Calendar({ languageCode: 'es' });
+const calendarWithSpanishNames = new Calendar({ languageCode: 'es' })
 ```
 
 For example: 
 
 ```js
-calendarWithSpanishName.dayNames.map(item => console.log(item.name));
+calendarWithSpanishName.dayNames.map(item => console.log(item.name))
 // Outputs:
 //   'Domingo'
 //   'Lunes'
@@ -73,14 +73,14 @@ calendarWithSpanishName.dayNames.map(item => console.log(item.name));
 ### Get an array of weeks in this month
 
 ```js
-console.log("Weeks this month:", calendar.weeks.length);
+console.log("Weeks this month:", calendar.weeks.length)
 // Output: Weeks this month: 5
 ```
 
 You can use the returned array of arrays to render a full calendar for a given month. If, for example, the month is September of 2018:
 
 ```js
-calendar.weeks.map(w => w.map(d => d.day));
+calendar.weeks.map(w => w.map(d => d.day))
 ```
 
 Will output all the elements as the day number:
