@@ -4,12 +4,31 @@
 
 A JSON data model for displaying dates and date ranges on a calendar interface.
 
+## Installation
+
+Install with NodeJS:
+
+```sh
+npm install json-calendar
+```
+
+Install for browsers, Volta, or Deno:
+
+```js
+import {install} from 'esinstall';
+ 
+await install(['json-calendar'], {
+  /* options */
+});
+// Result: Creates `json-calendar.js` inside a `web_modules/` directory in your current directory.
+```
+
 ### Usage
 
 Works default out of the box:
 
 ```js
-const Calendar = require("@rxgx/json-calendar");
+const Calendar = require("json-calendar");
 const calendar = new Calendar();
 calendar.weeks.map(
   week => week.days.map(
