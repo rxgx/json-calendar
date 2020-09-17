@@ -28,7 +28,7 @@
     "build": "tsc",
     "format": "standardx --fix **/*.ts",
     "lint": "standardx **/*.ts",
-    "test": "jest",
+    "test": "jest --coverage",
     "verify": "npm run lint && npm t"
   },
   "repository": {
