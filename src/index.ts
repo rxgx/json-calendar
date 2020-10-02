@@ -9,18 +9,6 @@ import getDaysInMonth = require('./getDaysInMonth')
 import isWeekend = require('./isWeekend')
 import dictionary = require('./dictionary')
 
-interface CalendarParams {
-  abbreviate?: number
-  firstDayOfWeek?: number
-  languageCode?: string
-  monthIndex?: number
-  nextMonth?: string
-  previousMonth?: string
-  showToday?: boolean
-  today?: Date
-  year?: number
-}
-
 interface CalendarOptions {
   abbreviate: number
   firstDayOfWeek: number
@@ -60,36 +48,32 @@ export = class JsonCalendar {
 
   weeks: CalendarWeek[]
 
-  constructor (userParams?: CalendarParams) {
-    const params = userParams || ({} as CalendarParams)
+  constructor (userParams: Partial<CalendarOptions> = {}) {
+    const { today = new Date() } = userParams
 
-    const now = params.today || new Date()
-
-    const defaults = {
+    this.options = {
       abbreviate: 2,
       firstDayOfWeek: 0,
       languageCode: 'en',
-      monthIndex: now.getMonth(),
       nextMonth: ' ',
       previousMonth: ' ',
       showToday: true,
-      year: now.getFullYear()
+      today,
+      monthIndex: today.getMonth(),
+      year: today.getFullYear(),
+      ...userParams
     }
-
-    this.options = Object.assign({} as CalendarOptions, defaults, params)
 
     // assign the correct month and day names for the set language code
-    let language = dictionary[this.options.languageCode]
-
-    // default to englist if code is incorrect
-    if (!language) {
+    if (!['en', 'fr', 'es'].includes(this.options.languageCode)) {
       this.options.languageCode = 'en'
-      language = dictionary.en
     }
+
+    const language = dictionary[this.options.languageCode]
 
     this.monthNames = language.monthNames
 
-    this.today = createDate(now.getFullYear(), now.getMonth(), now.getDate())
+    this.today = createDate(today.getFullYear(), today.getMonth(), today.getDate())
 
     this.weeks = [] as CalendarWeek[]
 
@@ -104,7 +88,7 @@ export = class JsonCalendar {
     ) {
       const dayName = language.dayNames[index]
 
-      if (this.options.abbreviate) {
+      if (this.options.abbreviate > 1) {
         const dayAbbr = dayName.substr(0, this.options.abbreviate)
         this.dayNames[index] = { name: dayName, abbr: dayAbbr }
       } else {
@@ -117,7 +101,6 @@ export = class JsonCalendar {
 
   private buildWeeksArray (): void {
     let classNames: string[]
-    let day: CalendarDay
     let i = 1
     let week: CalendarWeek
     const { options } = this
@@ -135,7 +118,6 @@ export = class JsonCalendar {
       // Loop through the day index (0..6) for each week
       for (let d: number = firstDayOfWeek; d < firstDayOfWeek + 7; d += 1) {
         classNames = []
-        day = {} as CalendarDay
 
         if (w === 0 && d < firstDateIndex) {
           // Day of Previous Month
@@ -167,12 +149,14 @@ export = class JsonCalendar {
           classNames.push('weekend-day')
         }
 
-        day.className = classNames.join(' ')
-        day.id = `day${date.getTime()}`
-        day.day = date.getDate()
-        day.date = date
-        day.monthIndex = date.getMonth()
-        day.year = date.getFullYear()
+        const day: CalendarDay = {
+          className: classNames.join(' '),
+          id: `day${date.getTime()}`,
+          day: date.getDate(),
+          date: date,
+          monthIndex: date.getMonth(),
+          year: date.getFullYear()
+        }
 
         week.push(day)
       }
