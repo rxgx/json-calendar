@@ -189,7 +189,7 @@ export = class JsonCalendar {
 
   getDayAbbr (index: number): string {
     const dayName = this.dayNames[index]
-    return dayName?.abbr || ''
+    return dayName?.abbr ?? ''
   }
 
   getDayName (index: number): string {
