@@ -1,11 +1,11 @@
 module.exports = {
   collectCoverage: true,
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
   roots: [
-      "<rootDir>/src"
+    '<rootDir>/src'
   ],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': 'ts-jest'
   },
-  testEnvironment: "node",
-};
+  testEnvironment: 'node'
+}
