@@ -1,10 +1,10 @@
 interface Language {
-  dayNames: string[];
-  monthNames: string[];
+  dayNames: string[]
+  monthNames: string[]
 }
 
 interface Languages {
-  [key: string]: Language;
+  [key: string]: Language
 }
 
 const languages: Languages = {
@@ -85,4 +85,4 @@ const languages: Languages = {
   }
 }
 
-export = languages;
+export = languages

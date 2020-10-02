@@ -4,61 +4,61 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import createDate = require('./createDate');
-import getDaysInMonth = require('./getDaysInMonth');
-import isWeekend = require('./isWeekend');
-import dictionary = require('./dictionary');
+import createDate = require('./createDate')
+import getDaysInMonth = require('./getDaysInMonth')
+import isWeekend = require('./isWeekend')
+import dictionary = require('./dictionary')
 
 interface CalendarParams {
-  abbreviate?: number;
-  firstDayOfWeek?: number;
-  languageCode?: string;
-  monthIndex?: number;
-  nextMonth?: string;
-  previousMonth?: string;
-  showToday?: boolean;
-  today?: Date;
-  year?: number;
+  abbreviate?: number
+  firstDayOfWeek?: number
+  languageCode?: string
+  monthIndex?: number
+  nextMonth?: string
+  previousMonth?: string
+  showToday?: boolean
+  today?: Date
+  year?: number
 }
 
 interface CalendarOptions {
-  abbreviate: number;
-  firstDayOfWeek: number;
-  languageCode: string;
-  monthIndex: number;
-  nextMonth: string;
-  previousMonth: string;
-  showToday: boolean;
-  today: Date;
-  year: number;
+  abbreviate: number
+  firstDayOfWeek: number
+  languageCode: string
+  monthIndex: number
+  nextMonth: string
+  previousMonth: string
+  showToday: boolean
+  today: Date
+  year: number
 }
 
 interface CalendarDay {
-  className: string;
-  id: string;
-  day: number;
-  date: Date;
-  monthIndex: number;
-  year: number;
+  className: string
+  id: string
+  day: number
+  date: Date
+  monthIndex: number
+  year: number
 }
 
-type CalendarWeek = CalendarDay[];
+type CalendarWeek = CalendarDay[]
 
 interface CalendarDayName {
-  abbr?: string;
-  name: string;
+  abbr?: string
+  name: string
 }
 
 export = class JsonCalendar {
-  dayNames: CalendarDayName[];
+  dayNames: CalendarDayName[]
 
-  monthNames: string[];
+  monthNames: string[]
 
-  options: CalendarOptions;
+  options: CalendarOptions
 
-  today: Date;
+  today: Date
 
-  weeks: CalendarWeek[];
+  weeks: CalendarWeek[]
 
   constructor (userParams?: CalendarParams) {
     const params = userParams || ({} as CalendarParams)
@@ -199,4 +199,4 @@ export = class JsonCalendar {
   getMonthName (index: number): string {
     return this.monthNames[index]
   }
-};
+}

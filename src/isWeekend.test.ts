@@ -1,4 +1,4 @@
-import isWeekend = require('./isWeekend');
+import isWeekend = require('./isWeekend')
 
 test('exports function', () => {
   expect(typeof isWeekend).toBe('function')
