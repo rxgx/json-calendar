@@ -110,3 +110,20 @@ Will output an array of month names:
   'August', 'September', 'October', 'November', 'December'
 ]
 ```
+
+### Change the displayed month
+
+The following example code will display the days for September, 2020:
+
+```js
+// create the calendar
+const Calendar = require("json-calendar")
+const calendar = new Calendar()
+
+// sometime later fire an event
+function handleOnClick() {
+  calendar.changeMonth(2020, 8)
+}
+```
+
+The function `changeMonth` takes two number params: `year` and `monthIndex`
