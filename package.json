@@ -26,8 +26,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "format": "standardx --fix **/*.ts",
-    "lint": "standardx **/*.ts",
+    "format": "standardx --fix",
+    "lint": "ts-standard",
     "test": "jest --coverage",
     "verify": "npm run lint && npm t"
   },
@@ -39,13 +39,11 @@
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@types/jest": "^26.0.14",
-    "@typescript-eslint/eslint-plugin": "^4.3.0",
-    "@typescript-eslint/parser": "^4.3.0",
     "jest": "^26.4.2",
     "prettier": "^2.1.2",
     "semantic-release": "^17.1.1",
-    "standardx": "^5.0.0",
     "ts-jest": "^26.4.1",
+    "ts-standard": "^9.0.0",
     "typescript": "^4.0.3"
   },
   "dependencies": {},
@@ -62,13 +60,10 @@
       "@semantic-release/git"
     ]
   },
-  "standardx": {
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint/eslint-plugin"
-    ]
+  "ts-standard": {
+    "ignore": "lib"
   },
   "volta": {
-    "node": "14.11.0"
+    "node": "14.12.0"
   }
 }
