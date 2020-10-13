@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/rxgx/json-calendar/compare/v1.8.20...v1.9.0) (2020-10-13)
+
+
+### Features
+
+* use partial for calendar options; remove params type ([#326](https://github.com/rxgx/json-calendar/issues/326)) ([dc06925](https://github.com/rxgx/json-calendar/commit/dc0692532ced775407d65fb6118c694fe9946c75))
+
 ## [1.8.20](https://github.com/rxgx/json-calendar/compare/v1.8.19...v1.8.20) (2020-08-22)
 
 
