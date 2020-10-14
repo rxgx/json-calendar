@@ -1,6 +1,6 @@
 # json-calendar
 
-[![codecov](https://codecov.io/gh/rxgx/json-calendar/branch/main/graph/badge.svg)](https://codecov.io/gh/rxgx/json-calendar)
+[![codecov](https://codecov.io/gh/rxgx/json-calendar/branch/main/graph/badge.svg?token=uETifPQbG3)](undefined)
 
 A JSON data model for displaying dates and date ranges on a calendar interface.
 
