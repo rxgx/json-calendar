@@ -1,4 +1,4 @@
 export = function isWeekend (date: Date): boolean {
-  const day: number = date.getDay()
-  return day === 0 || day === 6
+  const dayIndex: number = date.getDay()
+  return dayIndex === 0 || dayIndex === 6
 }
