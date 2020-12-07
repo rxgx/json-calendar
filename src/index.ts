@@ -37,7 +37,7 @@ interface CalendarDayName {
   name: string
 }
 
-export = class JsonCalendar {
+class JsonCalendar {
   dayNames: CalendarDayName[]
 
   monthNames: string[]
@@ -73,7 +73,11 @@ export = class JsonCalendar {
 
     this.monthNames = language.monthNames
 
-    this.today = createDate(today.getFullYear(), today.getMonth(), today.getDate())
+    this.today = createDate(
+      today.getFullYear(),
+      today.getMonth(),
+      today.getDate()
+    )
 
     this.weeks = [] as CalendarWeek[]
 
@@ -184,3 +188,5 @@ export = class JsonCalendar {
     return this.monthNames[index]
   }
 }
+
+export = JsonCalendar
