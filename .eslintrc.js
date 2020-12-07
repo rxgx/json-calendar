@@ -10,9 +10,5 @@ module.exports = {
     project: './tsconfig.eslint.json',
     sourceType: 'module',
     tsconfigRootDir: __dirname
-  },
-  rules: {
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'error'
   }
 }
