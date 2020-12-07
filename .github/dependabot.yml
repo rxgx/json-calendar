@@ -7,6 +7,12 @@ updates:
       interval: 'weekly'
     # Disable all pull requests for Docker dependencies
     open-pull-requests-limit: 0
+  # Check for updates to GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
   # Enable version updates for npm
   - package-ecosystem: 'npm'
     # Look for `package.json` and `lock` files in the `root` directory
