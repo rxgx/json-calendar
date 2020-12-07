@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/rxgx/json-calendar/compare/v1.9.0...v1.9.1) (2020-12-07)
+
+
+### Bug Fixes
+
+* bump ts-standard and remove json types ([#333](https://github.com/rxgx/json-calendar/issues/333)) ([2801173](https://github.com/rxgx/json-calendar/commit/280117316ce89735b5cdc7c3d35046e97f9554d3))
+
 # [1.9.0](https://github.com/rxgx/json-calendar/compare/v1.8.20...v1.9.0) (2020-10-13)
 
 
