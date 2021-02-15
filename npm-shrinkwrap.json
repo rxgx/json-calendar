@@ -12884,7 +12884,7 @@
     },
     "node_modules/npm/node_modules/execa/node_modules/get-stream": {
       "version": "3.0.0",
-      "resolved": "http://registry.npmjs.org/get-stream/-/get-stream-3.0.0.tgz",
+      "resolved": "https://registry.npmjs.org/get-stream/-/get-stream-3.0.0.tgz",
       "integrity": "sha1-jpQ9E1jcN1VQVOy+LtsFqhdO3hQ=",
       "dev": true,
       "inBundle": true,
@@ -13330,7 +13330,7 @@
     },
     "node_modules/npm/node_modules/got/node_modules/get-stream": {
       "version": "3.0.0",
-      "resolved": "http://registry.npmjs.org/get-stream/-/get-stream-3.0.0.tgz",
+      "resolved": "https://registry.npmjs.org/get-stream/-/get-stream-3.0.0.tgz",
       "integrity": "sha1-jpQ9E1jcN1VQVOy+LtsFqhdO3hQ=",
       "dev": true,
       "inBundle": true,
@@ -18169,9 +18169,9 @@
       }
     },
     "node_modules/semantic-release": {
-      "version": "17.3.8",
-      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-17.3.8.tgz",
-      "integrity": "sha512-VOYRY/qm4ysTUbOTrMaVRd+boG0HQlHgSCvVgNqvG0l99RCIwuUkamD0D+T5l7XhMHc4XGxNRGrElcVyPPS86A==",
+      "version": "17.3.9",
+      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-17.3.9.tgz",
+      "integrity": "sha512-iPDySFcAXG+7KiM0JH4bvF++imkf85VmfXpIBPAyDxK/P4+pe19KNFCfkzTKwUJkTIAyLUIr7WOg3W5h5aMwNg==",
       "dev": true,
       "dependencies": {
         "@semantic-release/commit-analyzer": "^8.0.0",
@@ -30784,7 +30784,7 @@
           "dependencies": {
             "get-stream": {
               "version": "3.0.0",
-              "resolved": "http://registry.npmjs.org/get-stream/-/get-stream-3.0.0.tgz",
+              "resolved": "https://registry.npmjs.org/get-stream/-/get-stream-3.0.0.tgz",
               "integrity": "sha1-jpQ9E1jcN1VQVOy+LtsFqhdO3hQ=",
               "bundled": true,
               "dev": true
@@ -31175,7 +31175,7 @@
           "dependencies": {
             "get-stream": {
               "version": "3.0.0",
-              "resolved": "http://registry.npmjs.org/get-stream/-/get-stream-3.0.0.tgz",
+              "resolved": "https://registry.npmjs.org/get-stream/-/get-stream-3.0.0.tgz",
               "integrity": "sha1-jpQ9E1jcN1VQVOy+LtsFqhdO3hQ=",
               "bundled": true,
               "dev": true
@@ -35090,9 +35090,9 @@
       }
     },
     "semantic-release": {
-      "version": "17.3.8",
-      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-17.3.8.tgz",
-      "integrity": "sha512-VOYRY/qm4ysTUbOTrMaVRd+boG0HQlHgSCvVgNqvG0l99RCIwuUkamD0D+T5l7XhMHc4XGxNRGrElcVyPPS86A==",
+      "version": "17.3.9",
+      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-17.3.9.tgz",
+      "integrity": "sha512-iPDySFcAXG+7KiM0JH4bvF++imkf85VmfXpIBPAyDxK/P4+pe19KNFCfkzTKwUJkTIAyLUIr7WOg3W5h5aMwNg==",
       "dev": true,
       "requires": {
         "@semantic-release/commit-analyzer": "^8.0.0",
