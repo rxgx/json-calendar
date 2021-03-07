@@ -28,16 +28,14 @@ await install(['json-calendar'], {
 Works default out of the box:
 
 ```js
-const Calendar = require("json-calendar")
-const calendar = new Calendar()
-calendar.weeks.map(
-  week => week.days.map(
-    day => {
-      const { className, id, day, date, monthIndex, year } = day;
-      // do something with the day's data
-      return date.toLocaleString()
-    }
-  )
+const { JsonCalendar } = require('json-calendar')
+const calendar = new JsonCalendar()
+calendar.weeks.map(week =>
+  week.days.map(day => {
+    const { className, id, day, date, monthIndex, year } = day
+    // do something with the day's data
+    return date.toLocaleString()
+  })
 )
 ```
 
@@ -45,7 +43,7 @@ Or set a custom selected date:
 
 ```js
 // with custom today date
-const calendar = new Calendar({ today: new Date(1971, 0, 1) })
+const calendar = new JsonCalendar({ today: new Date(1971, 0, 1) })
 ```
 
 Or use a specific language:
@@ -53,10 +51,10 @@ Or use a specific language:
 ```js
 // with language for day and month names
 // 'fr', 'es' and 'en' supported, will default to 'en' if empty or unrecognized
-const calendarWithSpanishNames = new Calendar({ languageCode: 'es' })
+const calendarWithSpanishNames = new JsonCalendar({ languageCode: 'es' })
 ```
 
-For example: 
+For example:
 
 ```js
 calendarWithSpanishName.dayNames.map(item => console.log(item.name))
@@ -73,7 +71,7 @@ calendarWithSpanishName.dayNames.map(item => console.log(item.name))
 ### Get an array of weeks in this month
 
 ```js
-console.log("Weeks this month:", calendar.weeks.length)
+console.log('Weeks this month:', calendar.weeks.length)
 // Output: Weeks this month: 5
 ```
 
@@ -86,14 +84,14 @@ calendar.weeks.map(w => w.map(d => d.day))
 Will output all the elements as the day number:
 
 ```js
-[
+;[
   [26, 27, 28, 29, 30, 31, 1],
   [2, 3, 4, 5, 6, 7, 8],
   [9, 10, 11, 12, 13, 14, 15],
   [16, 17, 18, 19, 20, 21, 22],
   [23, 24, 25, 26, 27, 28, 29],
   [30, 1, 2, 3, 4, 5, 6]
-];
+]
 ```
 
 ### Get an array of month names
@@ -105,9 +103,19 @@ calendar.monthNames
 Will output an array of month names:
 
 ```js
-[
-  'January', 'February', 'March', 'April', 'May', 'June', 'July',
-  'August', 'September', 'October', 'November', 'December'
+;[
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
 ]
 ```
 
@@ -117,11 +125,11 @@ The following example code will display the days for September, 2020:
 
 ```js
 // create the calendar
-const Calendar = require("json-calendar")
-const calendar = new Calendar()
+const { JsonCalendar } = require('json-calendar')
+const calendar = new JsonCalendar()
 
 // sometime later fire an event
-function handleOnClick() {
+function handleOnClick () {
   calendar.changeMonth(2020, 8)
 }
 ```
