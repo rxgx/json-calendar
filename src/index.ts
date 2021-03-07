@@ -9,7 +9,7 @@ import getDaysInMonth = require('./getDaysInMonth')
 import isWeekend = require('./isWeekend')
 import dictionary = require('./dictionary')
 
-interface CalendarOptions {
+export interface CalendarOptions {
   abbreviate: number
   firstDayOfWeek: number
   languageCode: string
@@ -21,7 +21,7 @@ interface CalendarOptions {
   year: number
 }
 
-interface CalendarDay {
+export interface CalendarDay {
   className: string
   id: string
   day: number
@@ -30,9 +30,9 @@ interface CalendarDay {
   year: number
 }
 
-type CalendarWeek = CalendarDay[]
+export type CalendarWeek = CalendarDay[]
 
-interface CalendarDayName {
+export interface CalendarDayName {
   abbr?: string
   name: string
 }
@@ -189,4 +189,4 @@ class JsonCalendar {
   }
 }
 
-export = JsonCalendar
+export default JsonCalendar
