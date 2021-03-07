@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/rxgx/json-calendar/compare/v1.9.1...v1.10.0) (2021-03-07)
+
+
+### Features
+
+* update import and types for esmodules ([#362](https://github.com/rxgx/json-calendar/issues/362)) ([5082c76](https://github.com/rxgx/json-calendar/commit/5082c768a670c3b8a2c3414dc114956b67d25e2b))
+
 ## [1.9.1](https://github.com/rxgx/json-calendar/compare/v1.9.0...v1.9.1) (2020-12-07)
 
 
