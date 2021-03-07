@@ -37,7 +37,7 @@ export interface CalendarDayName {
   name: string
 }
 
-class JsonCalendar {
+export class JsonCalendar {
   dayNames: CalendarDayName[]
 
   monthNames: string[]
@@ -188,5 +188,3 @@ class JsonCalendar {
     return this.monthNames[index]
   }
 }
-
-export default JsonCalendar
