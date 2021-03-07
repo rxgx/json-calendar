@@ -2,7 +2,13 @@
   "name": "json-calendar",
   "version": "1.9.1",
   "description": "A data model for displaying dates and date ranges on a calendar interface.",
-  "keywords": ["json", "calendar", "date", "date picker", "date range"],
+  "keywords": [
+    "json",
+    "calendar",
+    "date",
+    "date picker",
+    "date range"
+  ],
   "homepage": "https://github.com/rxgx/json-calendar",
   "license": "MIT",
   "author": "Ryan Gasparini <ryan@rxgx.com> (http://www.rxgx.com)",
@@ -15,7 +21,9 @@
   "directories": {
     "lib": "./lib"
   },
-  "files": ["lib/**/*"],
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "format": "ts-standard --fix",
@@ -37,10 +45,12 @@
     "semantic-release": "^17.3.0",
     "ts-jest": "^26.4.1",
     "ts-standard": "^10.0.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.2.3"
   },
   "release": {
-    "branches": ["main"],
+    "branches": [
+      "main"
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
