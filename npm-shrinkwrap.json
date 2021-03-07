@@ -5,18 +5,22 @@
   "requires": true,
   "packages": {
     "": {
-      "version": "1.9.1",
+      "version": "1.10.0",
       "license": "MIT",
       "devDependencies": {
         "@semantic-release/changelog": "^5.0.1",
         "@semantic-release/git": "^9.0.0",
         "@types/jest": "^26.0.14",
+        "@types/node": "^14.14.32",
         "jest": "^26.5.2",
         "prettier": "^2.1.2",
         "semantic-release": "^17.3.0",
         "ts-jest": "^26.4.1",
         "ts-standard": "^10.0.0",
         "typescript": "^4.2.3"
+      },
+      "engines": {
+        "node": ">=14.16"
       }
     },
     "node_modules/@babel/code-frame": {
@@ -2528,9 +2532,9 @@
       "dev": true
     },
     "node_modules/@types/node": {
-      "version": "13.13.2",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-13.13.2.tgz",
-      "integrity": "sha512-LB2R1Oyhpg8gu4SON/mfforE525+Hi/M1ineICEDftqNVTyFg1aRIeGuTvXAoWHc4nbrFncWtJgMmoyRvuGh7A==",
+      "version": "14.14.32",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-14.14.32.tgz",
+      "integrity": "sha512-/Ctrftx/zp4m8JOujM5ZhwzlWLx22nbQJiVqz8/zE15gOeEW+uly3FSX4fGFpcfEvFzXcMCJwq9lGVWgyARXhg==",
       "dev": true
     },
     "node_modules/@types/normalize-package-data": {
@@ -22651,9 +22655,9 @@
       "dev": true
     },
     "@types/node": {
-      "version": "13.13.2",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-13.13.2.tgz",
-      "integrity": "sha512-LB2R1Oyhpg8gu4SON/mfforE525+Hi/M1ineICEDftqNVTyFg1aRIeGuTvXAoWHc4nbrFncWtJgMmoyRvuGh7A==",
+      "version": "14.14.32",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-14.14.32.tgz",
+      "integrity": "sha512-/Ctrftx/zp4m8JOujM5ZhwzlWLx22nbQJiVqz8/zE15gOeEW+uly3FSX4fGFpcfEvFzXcMCJwq9lGVWgyARXhg==",
       "dev": true
     },
     "@types/normalize-package-data": {
