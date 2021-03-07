@@ -1,4 +1,4 @@
-import JsonCalendar = require('./index')
+import JsonCalendar from './index'
 
 test('exports a class', () => {
   const subject = new JsonCalendar()
