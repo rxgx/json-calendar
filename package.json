@@ -9,13 +9,10 @@
   "bugs": {
     "url": "https://github.com/rxgx/json-calendar/issues"
   },
-  "main": "./lib/index.js",
-  "module": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "directories": {
-    "lib": "./lib"
-  },
-  "files": ["lib/**/*"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["index.js", "index.d.ts", "dist/**/*"],
   "scripts": {
     "build": "tsc",
     "format": "ts-standard --fix",
@@ -52,7 +49,7 @@
     ]
   },
   "ts-standard": {
-    "ignore": ["lib", "*.d.ts"]
+    "ignore": ["dist", "*.d.ts"]
   },
   "engines": {
     "node": ">=14.16"
