@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/rxgx/json-calendar/compare/v1.10.0...v1.11.0) (2021-03-08)
+
+
+### Features
+
+* remove default export for commonjs ([#363](https://github.com/rxgx/json-calendar/issues/363)) ([9a0d5fc](https://github.com/rxgx/json-calendar/commit/9a0d5fce9d17c82b93d46225e7d0b3dd11752231))
+
 # [1.10.0](https://github.com/rxgx/json-calendar/compare/v1.9.1...v1.10.0) (2021-03-07)
 
 
