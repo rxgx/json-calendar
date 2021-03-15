@@ -2,7 +2,13 @@
   "name": "json-calendar",
   "version": "1.11.0",
   "description": "A data model for displaying dates and date ranges on a calendar interface.",
-  "keywords": ["json", "calendar", "date", "date picker", "date range"],
+  "keywords": [
+    "json",
+    "calendar",
+    "date",
+    "date picker",
+    "date range"
+  ],
   "homepage": "https://github.com/rxgx/json-calendar",
   "license": "MIT",
   "author": "Ryan Gasparini <ryan@rxgx.com> (http://www.rxgx.com)",
@@ -12,7 +18,11 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["index.js", "index.d.ts", "dist/**/*"],
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "format": "ts-standard --fix",
@@ -30,16 +40,18 @@
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.32",
+    "@types/node": "^14.14.35",
     "jest": "^26.5.2",
     "prettier": "^2.1.2",
-    "semantic-release": "^17.3.0",
+    "semantic-release": "^17.4.2",
     "ts-jest": "^26.4.1",
     "ts-standard": "^10.0.0",
     "typescript": "^4.2.3"
   },
   "release": {
-    "branches": ["main"],
+    "branches": [
+      "main"
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -50,7 +62,10 @@
     ]
   },
   "ts-standard": {
-    "ignore": ["dist", "*.d.ts"]
+    "ignore": [
+      "dist",
+      "*.d.ts"
+    ]
   },
   "engines": {
     "node": ">=14.16"
