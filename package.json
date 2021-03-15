@@ -2,13 +2,7 @@
   "name": "json-calendar",
   "version": "1.11.0",
   "description": "A data model for displaying dates and date ranges on a calendar interface.",
-  "keywords": [
-    "json",
-    "calendar",
-    "date",
-    "date picker",
-    "date range"
-  ],
+  "keywords": ["json", "calendar", "date", "date picker", "date range"],
   "homepage": "https://github.com/rxgx/json-calendar",
   "license": "MIT",
   "author": "Ryan Gasparini <ryan@rxgx.com> (http://www.rxgx.com)",
@@ -18,15 +12,12 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "dist/**/*"
-  ],
+  "files": ["index.js", "index.d.ts", "dist/**/*"],
   "scripts": {
     "build": "tsc",
     "format": "ts-standard --fix",
     "lint": "ts-standard",
+    "lockfile": "npx lockfile-lint --path npm-shrinkwrap.json --type npm --allowed-hosts npm yarn --validate-https",
     "release": "semantic-release",
     "test": "jest --coverage",
     "verify": "tsc --noEmit && npm run lint && npm t"
@@ -48,9 +39,7 @@
     "typescript": "^4.2.3"
   },
   "release": {
-    "branches": [
-      "main"
-    ],
+    "branches": ["main"],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -61,10 +50,7 @@
     ]
   },
   "ts-standard": {
-    "ignore": [
-      "dist",
-      "*.d.ts"
-    ]
+    "ignore": ["dist", "*.d.ts"]
   },
   "engines": {
     "node": ">=14.16"
