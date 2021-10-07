@@ -23,6 +23,8 @@ jobs:
         env:
           GIT_AUTHOR_NAME: 'Ryan Gasparini'
           GIT_AUTHOR_EMAIL: 'ryan@rxgx.com'
+          GIT_COMMITTER_NAME: 'Ryan Gasparini'
+          GIT_COMMITTER_EMAIL: 'ryan@rxgx.com'
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
