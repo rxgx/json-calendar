@@ -1456,14 +1456,14 @@
       }
     },
     "node_modules/@semantic-release/commit-analyzer": {
-      "version": "9.0.1",
-      "resolved": "https://registry.npmjs.org/@semantic-release/commit-analyzer/-/commit-analyzer-9.0.1.tgz",
-      "integrity": "sha512-ncNsnrLmiykhgNZUXNvhhAjNN0me7VGIb0X5hu3ogyi5DDPapjGAHdEffO5vi+HX1BFWLRD/Ximx5PjGAKjAqQ==",
+      "version": "9.0.2",
+      "resolved": "https://registry.npmjs.org/@semantic-release/commit-analyzer/-/commit-analyzer-9.0.2.tgz",
+      "integrity": "sha512-E+dr6L+xIHZkX4zNMe6Rnwg4YQrWNXK+rNsvwOPpdFppvZO1olE2fIgWhv89TkQErygevbjsZFSIxp+u6w2e5g==",
       "dev": true,
       "dependencies": {
         "conventional-changelog-angular": "^5.0.0",
         "conventional-commits-filter": "^2.0.0",
-        "conventional-commits-parser": "^3.0.7",
+        "conventional-commits-parser": "^3.2.3",
         "debug": "^4.0.0",
         "import-from": "^4.0.0",
         "lodash": "^4.17.4",
@@ -1477,9 +1477,9 @@
       }
     },
     "node_modules/@semantic-release/commit-analyzer/node_modules/debug": {
-      "version": "4.3.2",
-      "resolved": "https://registry.npmjs.org/debug/-/debug-4.3.2.tgz",
-      "integrity": "sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==",
+      "version": "4.3.3",
+      "resolved": "https://registry.npmjs.org/debug/-/debug-4.3.3.tgz",
+      "integrity": "sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==",
       "dev": true,
       "dependencies": {
         "ms": "2.1.2"
@@ -2907,9 +2907,9 @@
       }
     },
     "node_modules/conventional-commits-parser": {
-      "version": "3.2.2",
-      "resolved": "https://registry.npmjs.org/conventional-commits-parser/-/conventional-commits-parser-3.2.2.tgz",
-      "integrity": "sha512-Jr9KAKgqAkwXMRHjxDwO/zOCDKod1XdAESHAGuJX38iZ7ZzVti/tvVoysO0suMsdAObp9NQ2rHSsSbnAqZ5f5g==",
+      "version": "3.2.3",
+      "resolved": "https://registry.npmjs.org/conventional-commits-parser/-/conventional-commits-parser-3.2.3.tgz",
+      "integrity": "sha512-YyRDR7On9H07ICFpRm/igcdjIqebXbvf4Cff+Pf0BrBys1i1EOzx9iFXNlAbdrLAR8jf7bkUYkDAr8pEy0q4Pw==",
       "dev": true,
       "dependencies": {
         "is-text-path": "^1.0.1",
@@ -7294,6 +7294,12 @@
       "integrity": "sha1-1SfftUVuynzJu5XV2ur4i6VKVFE=",
       "dev": true
     },
+    "node_modules/lodash.memoize": {
+      "version": "4.1.2",
+      "resolved": "https://registry.npmjs.org/lodash.memoize/-/lodash.memoize-4.1.2.tgz",
+      "integrity": "sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=",
+      "dev": true
+    },
     "node_modules/lodash.toarray": {
       "version": "4.4.0",
       "resolved": "https://registry.npmjs.org/lodash.toarray/-/lodash.toarray-4.4.0.tgz",
@@ -11546,12 +11552,12 @@
       }
     },
     "node_modules/semantic-release": {
-      "version": "18.0.0",
-      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-18.0.0.tgz",
-      "integrity": "sha512-/Szyhq5DTZCYry/aZqpBbK/kqv10ydn6oiiaYOXtPgDbAIkqidZcQOm+mfYFJ0sBTUaOYCKMlcPMgJycP7jDYQ==",
+      "version": "18.0.1",
+      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-18.0.1.tgz",
+      "integrity": "sha512-xTdKCaEnCzHr+Fqyhg/5I8P9pvY9z7WHa8TFCYIwcdPbuzAtQShOTzw3VNPsqBT+Yq1kFyBQFBKBYkGOlqWmfA==",
       "dev": true,
       "dependencies": {
-        "@semantic-release/commit-analyzer": "^9.0.0",
+        "@semantic-release/commit-analyzer": "^9.0.2",
         "@semantic-release/error": "^3.0.0",
         "@semantic-release/github": "^8.0.0",
         "@semantic-release/npm": "^8.0.0",
@@ -12430,16 +12436,16 @@
       }
     },
     "node_modules/ts-jest": {
-      "version": "27.0.5",
-      "resolved": "https://registry.npmjs.org/ts-jest/-/ts-jest-27.0.5.tgz",
-      "integrity": "sha512-lIJApzfTaSSbtlksfFNHkWOzLJuuSm4faFAfo5kvzOiRAuoN4/eKxVJ2zEAho8aecE04qX6K1pAzfH5QHL1/8w==",
+      "version": "27.0.7",
+      "resolved": "https://registry.npmjs.org/ts-jest/-/ts-jest-27.0.7.tgz",
+      "integrity": "sha512-O41shibMqzdafpuP+CkrOL7ykbmLh+FqQrXEmV9CydQ5JBk0Sj0uAEF5TNNe94fZWKm3yYvWa/IbyV4Yg1zK2Q==",
       "dev": true,
       "dependencies": {
         "bs-logger": "0.x",
         "fast-json-stable-stringify": "2.x",
         "jest-util": "^27.0.0",
         "json5": "2.x",
-        "lodash": "4.x",
+        "lodash.memoize": "4.x",
         "make-error": "1.x",
         "semver": "7.x",
         "yargs-parser": "20.x"
@@ -14224,14 +14230,14 @@
       }
     },
     "@semantic-release/commit-analyzer": {
-      "version": "9.0.1",
-      "resolved": "https://registry.npmjs.org/@semantic-release/commit-analyzer/-/commit-analyzer-9.0.1.tgz",
-      "integrity": "sha512-ncNsnrLmiykhgNZUXNvhhAjNN0me7VGIb0X5hu3ogyi5DDPapjGAHdEffO5vi+HX1BFWLRD/Ximx5PjGAKjAqQ==",
+      "version": "9.0.2",
+      "resolved": "https://registry.npmjs.org/@semantic-release/commit-analyzer/-/commit-analyzer-9.0.2.tgz",
+      "integrity": "sha512-E+dr6L+xIHZkX4zNMe6Rnwg4YQrWNXK+rNsvwOPpdFppvZO1olE2fIgWhv89TkQErygevbjsZFSIxp+u6w2e5g==",
       "dev": true,
       "requires": {
         "conventional-changelog-angular": "^5.0.0",
         "conventional-commits-filter": "^2.0.0",
-        "conventional-commits-parser": "^3.0.7",
+        "conventional-commits-parser": "^3.2.3",
         "debug": "^4.0.0",
         "import-from": "^4.0.0",
         "lodash": "^4.17.4",
@@ -14239,9 +14245,9 @@
       },
       "dependencies": {
         "debug": {
-          "version": "4.3.2",
-          "resolved": "https://registry.npmjs.org/debug/-/debug-4.3.2.tgz",
-          "integrity": "sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==",
+          "version": "4.3.3",
+          "resolved": "https://registry.npmjs.org/debug/-/debug-4.3.3.tgz",
+          "integrity": "sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==",
           "dev": true,
           "requires": {
             "ms": "2.1.2"
@@ -15398,9 +15404,9 @@
       }
     },
     "conventional-commits-parser": {
-      "version": "3.2.2",
-      "resolved": "https://registry.npmjs.org/conventional-commits-parser/-/conventional-commits-parser-3.2.2.tgz",
-      "integrity": "sha512-Jr9KAKgqAkwXMRHjxDwO/zOCDKod1XdAESHAGuJX38iZ7ZzVti/tvVoysO0suMsdAObp9NQ2rHSsSbnAqZ5f5g==",
+      "version": "3.2.3",
+      "resolved": "https://registry.npmjs.org/conventional-commits-parser/-/conventional-commits-parser-3.2.3.tgz",
+      "integrity": "sha512-YyRDR7On9H07ICFpRm/igcdjIqebXbvf4Cff+Pf0BrBys1i1EOzx9iFXNlAbdrLAR8jf7bkUYkDAr8pEy0q4Pw==",
       "dev": true,
       "requires": {
         "is-text-path": "^1.0.1",
@@ -18786,6 +18792,12 @@
       "integrity": "sha1-1SfftUVuynzJu5XV2ur4i6VKVFE=",
       "dev": true
     },
+    "lodash.memoize": {
+      "version": "4.1.2",
+      "resolved": "https://registry.npmjs.org/lodash.memoize/-/lodash.memoize-4.1.2.tgz",
+      "integrity": "sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=",
+      "dev": true
+    },
     "lodash.toarray": {
       "version": "4.4.0",
       "resolved": "https://registry.npmjs.org/lodash.toarray/-/lodash.toarray-4.4.0.tgz",
@@ -21917,12 +21929,12 @@
       }
     },
     "semantic-release": {
-      "version": "18.0.0",
-      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-18.0.0.tgz",
-      "integrity": "sha512-/Szyhq5DTZCYry/aZqpBbK/kqv10ydn6oiiaYOXtPgDbAIkqidZcQOm+mfYFJ0sBTUaOYCKMlcPMgJycP7jDYQ==",
+      "version": "18.0.1",
+      "resolved": "https://registry.npmjs.org/semantic-release/-/semantic-release-18.0.1.tgz",
+      "integrity": "sha512-xTdKCaEnCzHr+Fqyhg/5I8P9pvY9z7WHa8TFCYIwcdPbuzAtQShOTzw3VNPsqBT+Yq1kFyBQFBKBYkGOlqWmfA==",
       "dev": true,
       "requires": {
-        "@semantic-release/commit-analyzer": "^9.0.0",
+        "@semantic-release/commit-analyzer": "^9.0.2",
         "@semantic-release/error": "^3.0.0",
         "@semantic-release/github": "^8.0.0",
         "@semantic-release/npm": "^8.0.0",
@@ -22637,16 +22649,16 @@
       "dev": true
     },
     "ts-jest": {
-      "version": "27.0.5",
-      "resolved": "https://registry.npmjs.org/ts-jest/-/ts-jest-27.0.5.tgz",
-      "integrity": "sha512-lIJApzfTaSSbtlksfFNHkWOzLJuuSm4faFAfo5kvzOiRAuoN4/eKxVJ2zEAho8aecE04qX6K1pAzfH5QHL1/8w==",
+      "version": "27.0.7",
+      "resolved": "https://registry.npmjs.org/ts-jest/-/ts-jest-27.0.7.tgz",
+      "integrity": "sha512-O41shibMqzdafpuP+CkrOL7ykbmLh+FqQrXEmV9CydQ5JBk0Sj0uAEF5TNNe94fZWKm3yYvWa/IbyV4Yg1zK2Q==",
       "dev": true,
       "requires": {
         "bs-logger": "0.x",
         "fast-json-stable-stringify": "2.x",
         "jest-util": "^27.0.0",
         "json5": "2.x",
-        "lodash": "4.x",
+        "lodash.memoize": "4.x",
         "make-error": "1.x",
         "semver": "7.x",
         "yargs-parser": "20.x"
