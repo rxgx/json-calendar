@@ -4,10 +4,10 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import createDate = require('./createDate')
-import getDaysInMonth = require('./getDaysInMonth')
-import isWeekend = require('./isWeekend')
-import dictionary = require('./dictionary')
+import createDate from './createDate'
+import getDaysInMonth from './getDaysInMonth'
+import isWeekend from './isWeekend'
+import dictionary from './dictionary'
 
 export interface CalendarOptions {
   abbreviate: number

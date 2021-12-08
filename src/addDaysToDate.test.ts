@@ -1,4 +1,4 @@
-import addDaysToDate = require('./addDaysToDate')
+import addDaysToDate from './addDaysToDate'
 
 test('add days to date', () => {
   const date = new Date(2018, 8, 29, 0, 0)
