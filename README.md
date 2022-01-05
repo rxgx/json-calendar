@@ -1,6 +1,6 @@
 # json-calendar
 
-[![codecov](https://codecov.io/gh/rxgx/json-calendar/branch/main/graph/badge.svg?token=uETifPQbG3)](undefined)
+[![codecov](https://codecov.io/gh/rxgx/json-calendar/branch/main/graph/badge.svg?token=uETifPQbG3)](undefined) [![Publish](https://github.com/rxgx/json-calendar/actions/workflows/publish.yml/badge.svg)](https://github.com/rxgx/json-calendar/actions/workflows/publish.yml)
 
 A JSON data model for displaying dates and date ranges on a calendar interface.
 
