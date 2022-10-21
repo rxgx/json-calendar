@@ -13,7 +13,7 @@ Install with NodeJS:
 npm install json-calendar
 ```
 
-Install for browsers, Volta, or Deno:
+Install for browsers, [Volta](https://volta.sh), or [Deno](https://deno.land):
 
 ```js
 import { install } from 'esinstall'
