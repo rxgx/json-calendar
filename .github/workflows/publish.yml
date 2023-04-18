@@ -20,7 +20,7 @@ jobs:
           node-version: '16'
       - run: npm ci
       - run: npm run verify
-      - uses: codecov/codecov-action@v3.1.1
+      - uses: codecov/codecov-action@v3.1.2
       - run: npm run build --if-present
       - name: create release
         env:
