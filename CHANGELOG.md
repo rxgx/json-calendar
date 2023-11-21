@@ -1,3 +1,11 @@
+## [1.11.1](https://github.com/rxgx/json-calendar/compare/v1.11.0...v1.11.1) (2022-10-21)
+
+
+### Bug Fixes
+
+* resolve package audit ([2e2cf5c](https://github.com/rxgx/json-calendar/commit/2e2cf5c345cae853658a8ef59c305104e53300fd))
+* update typescript and use default imports ([7c234ce](https://github.com/rxgx/json-calendar/commit/7c234cebe92abd8c08845fcc9343733af014286a))
+
 # [1.11.0](https://github.com/rxgx/json-calendar/compare/v1.10.0...v1.11.0) (2021-03-08)
 
 

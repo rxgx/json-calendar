@@ -13,7 +13,7 @@ Install with NodeJS:
 npm install json-calendar
 ```
 
-Install for browsers, Volta, or Deno:
+Install for browsers, [Volta](https://volta.sh), or [Deno](https://deno.land):
 
 ```js
 import { install } from 'esinstall'
@@ -31,13 +31,13 @@ Works default out of the box:
 ```js
 const { JsonCalendar } = require('json-calendar')
 const calendar = new JsonCalendar()
-calendar.weeks.map(week =>
-  week.days.map(day => {
+calendar.weeks.map(week => {
+  week.map(day => {
     const { className, id, day, date, monthIndex, year } = day
     // do something with the day's data
     return date.toLocaleString()
   })
-)
+})
 ```
 
 Or set a custom selected date:
