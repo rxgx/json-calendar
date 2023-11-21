@@ -1,3 +1,15 @@
+## [1.11.2](https://github.com/rxgx/json-calendar/compare/v1.11.1...v1.11.2) (2023-11-21)
+
+
+### Bug Fixes
+
+* remove volta and engine from package ([#763](https://github.com/rxgx/json-calendar/issues/763)) ([d5de640](https://github.com/rxgx/json-calendar/commit/d5de6402f4243146dcc7771cf3171b0493761d4b))
+
+
+### Reverts
+
+* Revert "chore: use event instead of branch (#762)" (#764) ([6fc37ad](https://github.com/rxgx/json-calendar/commit/6fc37adc174553d5efd0ed745edcb748fbd74fe6)), closes [#762](https://github.com/rxgx/json-calendar/issues/762) [#764](https://github.com/rxgx/json-calendar/issues/764)
+
 ## [1.11.1](https://github.com/rxgx/json-calendar/compare/v1.11.0...v1.11.1) (2022-10-21)
 
 
