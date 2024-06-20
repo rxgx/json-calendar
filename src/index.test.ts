@@ -77,6 +77,9 @@ test('accepts change month', () => {
   calendar.changeMonth(2019, 3)
   expect(calendar.options.monthIndex).toBe(3)
   expect(calendar.options.year).toBe(2019)
+  expect(calendar.weeks.length).toBe(6)
+  expect(calendar.weeks[1][0].monthIndex).toBe(3)
+  expect(calendar.weeks[1][0].year).toBe(2019)
 })
 
 describe('uses firstDayOfWeek param', () => {

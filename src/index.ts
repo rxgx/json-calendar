@@ -113,6 +113,7 @@ export class JsonCalendar {
     const monthDays = getDaysInMonth(options.year, options.monthIndex)
     const firstDateIndex = firstDate.getDay()
 
+    this.weeks = []
     // Loop through week indexes (0..6)
     for (let w = 0; w < 6; w += 1) {
       let date: Date
@@ -157,7 +158,7 @@ export class JsonCalendar {
           className: classNames.join(' '),
           id: `day${date.getTime()}`,
           day: date.getDate(),
-          date: date,
+          date,
           monthIndex: date.getMonth(),
           year: date.getFullYear()
         }
