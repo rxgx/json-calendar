@@ -1,3 +1,10 @@
+## [1.11.3](https://github.com/rxgx/json-calendar/compare/v1.11.2...v1.11.3) (2024-06-30)
+
+
+### Bug Fixes
+
+* make sure weeks array is reset ([#844](https://github.com/rxgx/json-calendar/issues/844)) ([8f7cd94](https://github.com/rxgx/json-calendar/commit/8f7cd9458008b380fc30b35a7421b46b84dca804))
+
 ## [1.11.2](https://github.com/rxgx/json-calendar/compare/v1.11.1...v1.11.2) (2023-11-21)
 
 
