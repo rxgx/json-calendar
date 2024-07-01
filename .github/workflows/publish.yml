@@ -30,6 +30,8 @@ jobs:
       - run: npm audit signatures
       - run: npm run verify
       - uses: codecov/codecov-action@v4.5.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
       - run: npm run build --if-present
       - name: create release
         env:
