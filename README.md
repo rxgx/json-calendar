@@ -51,7 +51,7 @@ Or use a specific language:
 
 ```js
 // with language for day and month names
-// 'fr', 'es' and 'en' supported, will default to 'en' if empty or unrecognized
+// 'fr', 'es', 'id' and 'en' supported, will default to 'en' if empty or unrecognized
 const calendarWithSpanishNames = new JsonCalendar({ languageCode: 'es' })
 ```
 
