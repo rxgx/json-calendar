@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/rxgx/json-calendar/compare/v1.11.3...v1.12.0) (2024-09-27)
+
+
+### Features
+
+* Indonesian language support ([#856](https://github.com/rxgx/json-calendar/issues/856)) ([128c1eb](https://github.com/rxgx/json-calendar/commit/128c1ebc875b6a68629ac6b53974e8340910428e))
+
 ## [1.11.3](https://github.com/rxgx/json-calendar/compare/v1.11.2...v1.11.3) (2024-06-30)
 
 
