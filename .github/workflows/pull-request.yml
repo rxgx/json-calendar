@@ -1,4 +1,5 @@
 name: Pull Request
+  permission: read
 
 on:
   pull_request:
