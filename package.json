@@ -37,7 +37,7 @@
     "url": "https://github.com/rxgx/json-calendar.git"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/changelog": "^7.0.0",
     "@semantic-release/git": "^10.0.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.0.2",
